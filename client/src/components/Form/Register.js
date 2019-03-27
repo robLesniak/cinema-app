@@ -5,8 +5,7 @@ class Register extends Component {
   state = {
     username: '',
     email: '',
-    password: '',
-    isAdmin: false,
+    password: ''
   }
 
   onChange = (e) => {
