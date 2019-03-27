@@ -7,7 +7,8 @@ import store from "./store";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import AddMovie from "./components/Movie/AddMovie";
-import Register from "./components/UserManagement/Register"
+import Register from "./components/UserManagement/Register";
+import Login from "./components/UserManagement/Login";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Header />
             <Route exact path="/add/movie" component={AddMovie} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/Login" component={Login} />
           </div>
         </Router>
       </Provider>
