@@ -102,9 +102,10 @@ class Register extends Component {
                   />
                 </div>
                 <div className="checkbox">
-                  <label className="small">
-                    <input name="terms" type="checkbox" />I have read and agree
-                    to the <Link to="">terms of service</Link>
+                  <label>
+                    <input name="terms" type="checkbox" />
+                    &nbsp;I have read and agree to the{" "}
+                    <Link to="">terms of service</Link>
                   </label>
                 </div>
                 <input
