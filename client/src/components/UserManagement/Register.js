@@ -16,7 +16,7 @@ class Register extends Component {
   }
 
   render() {
-    const { username, email, password } = this.state;
+    const { username, email, password, confirmPassword } = this.state;
     return (
       <div class="container-fluid bg-light py-3">
         <div class="row">
@@ -37,7 +37,7 @@ class Register extends Component {
                     <input class="form-control input-lg" placeholder="Password" name="password" value={password} type="password" onChange={this.handleChange}/>
                   </div>
                   <div class="form-group has-success">
-                    <input class="form-control input-lg" placeholder="Confirm Password" name="password" value={password} type="password" onChange={this.handleChange}/>
+                    <input class="form-control input-lg" placeholder="Confirm Password" name="confirmPassword" value={confirmPassword} type="password" onChange={this.handleChange}/>
                   </div>
                   <div class="checkbox">
                     <label class="small">
