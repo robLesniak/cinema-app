@@ -7,7 +7,7 @@ import store from "./store";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import AddMovie from "./components/Movie/AddMovie";
-import Register from "./components/Form/Register";
+import Register from "./components/UserManagement/Register"
 
 class App extends Component {
   render() {
