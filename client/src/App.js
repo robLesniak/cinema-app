@@ -9,6 +9,7 @@ import Footer from "./components/Layout/Footer";
 import Register from "./components/UserManagement/Register";
 import AddMovie from "./components/MovieDashobard/Movie/AddMovie";
 import Dashboard from "./components/MovieDashobard/Dashboard";
+import Login from "./components/UserManagement/Login";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/add/movie" component={AddMovie} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/repertoire" component={Dashboard} />
+            <Route exact path="/Login" component={Login} />
           </div>
         </Router>
       </Provider>
