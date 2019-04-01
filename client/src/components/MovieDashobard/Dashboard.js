@@ -13,7 +13,7 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = state => console.log(state)({});
+const mapStateToProps = state => ({});
 
 export default compose(
   connect(mapStateToProps),
