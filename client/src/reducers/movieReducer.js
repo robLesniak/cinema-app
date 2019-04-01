@@ -12,6 +12,10 @@ export default function(state = initialState, action) {
         ...state,
         movie: action.payload
       };
+
+    case "CREATE_PROJECT_ERROR":
+      console.log("create project error", action.err);
+      return state;
     default:
       return state;
   }
