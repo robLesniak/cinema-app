@@ -7,34 +7,46 @@ class Header extends Component {
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav nav-pills mr-auto">
           <li className="nav-item nav-divider">
-            <Link to="" className="nav-link">
-              <i class="fa fa-film" />
+            <Link
+              to="/repertoire"
+              className="nav-link "
+              style={{ fontSize: "20px" }}
+            >
+              <i className="fa fa-film" />
               &nbsp;Repertoire
             </Link>
           </li>
           <li className="nav-item nav-divider">
-            <Link to="" className="nav-link">
-              <i class="fa fa-money" />
+            <Link to="" className="nav-link" style={{ fontSize: "20px" }}>
+              <i className="fa fa-money" />
               &nbsp;Price list
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="" className="nav-link">
+            <Link to="" className="nav-link" style={{ fontSize: "20px" }}>
               About us&nbsp;
-              <i class="fa fa-question-circle-o" />
+              <i className="fa fa-question-circle-o" />
             </Link>
           </li>
         </ul>
 
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link to="/register" className="nav-link ">
-              Sing up
+            <Link
+              to="/register"
+              className="nav-link "
+              style={{ fontSize: "20px" }}
+            >
+              <button type="button" className="btn btn-lg btn-outline-light ">
+                Sing up
+              </button>
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/login" className="nav-link">
-              Login
+            <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
+              <button type="button" className="btn btn-lg btn-outline-light ">
+                Login
+              </button>
             </Link>
           </li>
         </ul>
@@ -51,7 +63,7 @@ class Header extends Component {
             <img
               src={require("../../images/cinema.svg.png")}
               className="d-inline-block align-top"
-              style={{ height: "32px" }}
+              style={{ height: "42px" }}
               alt=""
             />
           </Link>
