@@ -15,3 +15,21 @@ export const signUp = (newUser) => {
     })
   }
 }
+
+export const signIn = (extUser) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+
+    firebase.auth().signInWithEmailAndPassword(
+      extUser.email,
+      extUser.password
+    ).then((resp) => {
+      return firestore.collection('users').doc(resp.user.uid)
+    }).then(() => {
+      dispatch({ type: 'SIGNIN_SUCCES'})
+    }).catch((err) => {
+      dispatch({ type: 'SIGNIN_ERROR', err})
+    })
+  }
+}
