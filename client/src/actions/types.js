@@ -1,1 +1,7 @@
 export const CREATE_MOVIE = "CREATE_MOVIE";
+
+export const SIGNUP_SUCCES = "SIGNUP_SUCCES";
+export const SIGNUP_ERROR = "SIGNUP_ERROR";
+
+export const CREATE_PROJECT_ERROR = "CREATE_PROJECT_ERROR";
+

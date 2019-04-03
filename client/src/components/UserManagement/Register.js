@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { connect } from 'react-redux';
+import { signUp } from "../../actions/authActions";
+
 class Register extends Component {
   state = {
     username: "",
@@ -10,7 +13,11 @@ class Register extends Component {
     inputBackgroundColor: ""
   };
 
-  handleSubmit = event => {};
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.signUp(this.state);
+  };
 
   handleChange = event => {
     this.setState({
@@ -120,7 +127,22 @@ class Register extends Component {
         </div>
       </div>
     );
+
   }
 }
 
 export default Register;
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);
