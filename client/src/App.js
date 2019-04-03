@@ -22,6 +22,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/repertoire" component={Dashboard} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path={"/repertoire/:movieId"} />
           </div>
         </Router>
       </Provider>
