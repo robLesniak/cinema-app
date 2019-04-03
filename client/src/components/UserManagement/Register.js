@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import { connect } from 'react-redux';
 import { signUp } from "../../actions/authActions";
- 
+
 class Register extends Component {
   state = {
     username: "",
@@ -11,6 +12,7 @@ class Register extends Component {
     confirmPassword: "",
     inputBackgroundColor: ""
   };
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -125,6 +127,12 @@ class Register extends Component {
         </div>
       </div>
     );
+
+  }
+}
+
+export default Register;
+
   }
 }
 

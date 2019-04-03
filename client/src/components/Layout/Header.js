@@ -29,7 +29,6 @@ class Header extends Component {
             </Link>
           </li>
         </ul>
-
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link
@@ -50,6 +49,7 @@ class Header extends Component {
             </Link>
           </li>
         </ul>
+        c
       </div>
     );
 
