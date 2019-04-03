@@ -9,7 +9,7 @@ class Footer extends Component {
           className="navbar navbar-expand-sm navbar-light justify-content-center fixed-bottom "
           style={{ backgroundColor: "#7070EF" }}
         >
-          <Link to="" class="navbar-brand">
+          <Link to="" className="navbar-brand">
             Fixed bottom
           </Link>
         </nav>
