@@ -49,7 +49,6 @@ class Header extends Component {
             </Link>
           </li>
         </ul>
-        c
       </div>
     );
 
