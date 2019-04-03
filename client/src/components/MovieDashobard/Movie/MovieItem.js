@@ -27,9 +27,20 @@ const MovieItem = ({ movie }) => {
             <Link
               to=""
               className="btn btn-lg"
-              style={{ backgroundColor: "#7070EF" }}
+              style={{ backgroundColor: "#7070EF", color: "white" }}
             >
               Movie details
+            </Link>
+            <Link
+              to={`/repertoire/${movie.id}`}
+              className="btn btn-lg"
+              style={{
+                backgroundColor: "#7070EF",
+                color: "white",
+                marginLeft: "5px"
+              }}
+            >
+              &nbsp;Avaiability&nbsp;
             </Link>
           </div>
         </div>
