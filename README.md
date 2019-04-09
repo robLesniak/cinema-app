@@ -1,2 +1,6 @@
 # cinema-services-SPA
-<img src="CinemaUserCasesDiagramUML.png" alt"usecase" />
+
+
+<p align="center">
+  <img src="CinemaUserCasesDiagramUML.png" alt"usecase" >
+ </p>
