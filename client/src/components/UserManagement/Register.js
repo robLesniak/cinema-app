@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+
+import { connect } from "react-redux";
 import { signUp } from "../../actions/authActions";
- 
+
 class Register extends Component {
   state = {
     username: "",
@@ -128,11 +129,11 @@ class Register extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    signUp: (newUser) => dispatch(signUp(newUser))
-  }
-}
+    signUp: newUser => dispatch(signUp(newUser))
+  };
+};
 
 export default connect(
   null,
