@@ -2,5 +2,5 @@
 
 
 <p align="center">
-  <img src="CinemaUseCaseDiagramUML.png" alt"usecase" >
+  <img src="CinemaUseCaseDiagramUML.png" widht="350" alt"usecase" >
  </p>
