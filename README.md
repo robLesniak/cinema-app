@@ -1,2 +1,2 @@
 # cinema-services-SPA
-![Screenshot](CinemaUserCasesDiagramUML.png)
+<img src="CinemaUserCasesDiagramUML.png" alt"usecase" />
