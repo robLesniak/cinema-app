@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./store/store";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import Register from "./components/UserManagement/Register";

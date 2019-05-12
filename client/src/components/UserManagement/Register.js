@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { signUp } from "../../actions/authActions";
+import { signUp } from "../../store/actions/authActions";
 
 class Register extends Component {
   state = {

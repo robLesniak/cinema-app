@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createMovie } from "../../../actions/movieActions";
+import { createMovie } from "../../../store/actions/movieActions";
 import { connect } from "react-redux";
 
 class AddMovie extends Component {
