@@ -37,7 +37,7 @@ class Header extends Component {
               style={{ fontSize: "20px" }}
             >
               <button type="button" className="btn btn-lg btn-outline-light ">
-                Sing up
+                Sign up
               </button>
             </Link>
           </li>
