@@ -25,7 +25,7 @@ const MovieItem = ({ movie }) => {
             <p className="card-text">Director: {movie.director}</p>
             <p className="card-text">Duration: {movie.duration} mins </p>
             <Link
-              to=""
+              to={`/repertoire/${movie.id}/details`}
               className="btn btn-lg"
               style={{ backgroundColor: "#7070EF", color: "white" }}
             >

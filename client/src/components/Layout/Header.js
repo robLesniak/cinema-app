@@ -54,12 +54,17 @@ class Header extends Component {
               className="nav-link "
               style={{ fontSize: "20px" }}
             >
+<<<<<<< HEAD
               <button
                 type="button"
                 className="btn btn-lg btn-outline-light "
                 style={{ border: "none" }}
               >
                 Sing up
+=======
+              <button type="button" className="btn btn-lg btn-outline-light ">
+                Sign up
+>>>>>>> 72917a0aa28887e13fb2b7cb3aff2b94d17d62e8
               </button>
             </Link>
           </li>

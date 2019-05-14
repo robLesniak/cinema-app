@@ -8,16 +8,16 @@ class Dashboard extends Component {
   render() {
     const { movies } = this.props;
     return (
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-2" />
+      <div className="container">
+        <div className="row justify-content-md-center">
+          <div className="col col-lg-2" />
           <div
-            class="col-md-auto"
+            className="col-md-auto"
             style={{ marginTop: "5px", marginBottom: "5px" }}
           >
             <MovieList movies={movies} />
           </div>
-          <div class="col col-lg-2" />
+          <div className="col col-lg-2" />
         </div>
       </div>
     );
