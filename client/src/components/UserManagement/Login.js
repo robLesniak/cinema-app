@@ -66,6 +66,7 @@ class Login extends Component {
                   class="btn btn-lg btn-primary btn-block"
                   value="Log me in"
                   type="submit"
+                  style={{ backgroundColor: "#7070EF" }}
                 />
               </form>
             </div>
