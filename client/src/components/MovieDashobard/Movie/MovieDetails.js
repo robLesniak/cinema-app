@@ -9,7 +9,15 @@ const MovieDetails = props => {
   const { movie } = props;
   if (movie) {
     return (
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+      >
         <div className="row justify-content-md-center">
           <div className="col col-lg-2" />
           <div
@@ -32,7 +40,10 @@ const MovieDetails = props => {
                   <img className="" src={movie.image} alt="" />
                 </div>
                 <div className="col-md-8 px-3">
-                  <div className="card-block px-6">
+                  <div
+                    className="card-block px-6"
+                    style={{ marginRight: "30px" }}
+                  >
                     <h4 className="card-title">{movie.type}</h4>
                     <p className="card-tex">{movie.plot}</p>
                     <p className="card-text">Actors: {movie.actors}</p>
