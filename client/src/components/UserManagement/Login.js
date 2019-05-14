@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signIn } from "../../actions/authActions";
+import { signIn } from "../../store/actions/authActions";
 
 class Login extends Component {
-
   state = {
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     inputBackgroundColor: ""
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.signIn(this.state)
+    this.props.signIn(this.state);
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
-    })
+    });
   };
 
   handleFocus = () => {
@@ -38,46 +37,50 @@ class Login extends Component {
           <div class="col-md-6 mx-auto">
             <div class="card card-body">
               <h3 class="text-center mb-4">Login</h3>
-                <form className="form-group" onSubmit={this.handleSubmit}>
-                  <div class="form-group has-success">
-                    <input 
-                      class="form-control input-lg" 
-                      placeholder="email address" 
-                      name="email" 
-                      value={email} 
-                      type="email" 
-                      onChange={this.handleChange}
-                      style={{ backgroundColor: this.state.inputBackgroundColor }}
-                      onFocus={this.handleFocus}
-                    />
-                  </div>
-                  <div class="form-group has-success">
-                    <input 
-                      class="form-control input-lg" 
-                      placeholder="Password" 
-                      name="password" 
-                      value={password} 
-                      type="password" 
-                      onChange={this.handleChange}
-                      style={{ backgroundColor: this.state.inputBackgroundColor }}
-                      onFocus={this.handleFocus}
-                    />
-                  </div>
-                    <input class="btn btn-lg btn-primary btn-block" value="Log me in" type="submit"/>
-                </form>
+              <form className="form-group" onSubmit={this.handleSubmit}>
+                <div class="form-group has-success">
+                  <input
+                    class="form-control input-lg"
+                    placeholder="email address"
+                    name="email"
+                    value={email}
+                    type="email"
+                    onChange={this.handleChange}
+                    style={{ backgroundColor: this.state.inputBackgroundColor }}
+                    onFocus={this.handleFocus}
+                  />
+                </div>
+                <div class="form-group has-success">
+                  <input
+                    class="form-control input-lg"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    type="password"
+                    onChange={this.handleChange}
+                    style={{ backgroundColor: this.state.inputBackgroundColor }}
+                    onFocus={this.handleFocus}
+                  />
+                </div>
+                <input
+                  class="btn btn-lg btn-primary btn-block"
+                  value="Log me in"
+                  type="submit"
+                />
+              </form>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    signIn: (extUser) => dispatch(signIn(extUser))
-  }
-}
+    signIn: extUser => dispatch(signIn(extUser))
+  };
+};
 
 export default connect(
   null,
