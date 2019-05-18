@@ -1,10 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import UserIsAuthenticatedNav from "../UserManagement/UserIsAuthenticatedNav";
+import UserIsNotAuthenticatedNav from "../UserManagement/UserIsNotAuthenticatedNav";
 
-class Header extends Component {
-  render() {
-    const userIsNotAuthenticatedNav = (
-      <div className="collapse navbar-collapse">
+const Header = props => {
+  const { auth } = props;
+  console.log(auth);
+  const links = auth.uid ? (
+    <UserIsAuthenticatedNav />
+  ) : (
+    <UserIsNotAuthenticatedNav />
+  );
+  return (
+    <nav
+      className="navbar navbar-expand-sm navbar-light "
+      style={{ backgroundColor: "#4b4bf4" }}
+    >
+      <div className="container">
+        <Link to="" className="navbar-brand">
+          <img
+            src={require("../../images/cinema.svg.png")}
+            className="d-inline-block align-top"
+            style={{ height: "42px" }}
+            alt=""
+          />
+        </Link>
         <ul className="navbar-nav nav-pills mr-auto">
           <li className="nav-item nav-divider">
             <Link
@@ -15,7 +36,7 @@ class Header extends Component {
               <button
                 type="button"
                 className="btn btn-lg btn-outline-light "
-                style={{ border: "none" }}
+                style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-film" />
                 &nbsp;Repertoire
@@ -27,7 +48,7 @@ class Header extends Component {
               <button
                 type="button"
                 className="btn btn-lg btn-outline-light "
-                style={{ border: "none" }}
+                style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-money" />
                 &nbsp;Price list
@@ -39,7 +60,7 @@ class Header extends Component {
               <button
                 type="button"
                 className="btn btn-lg btn-outline-light "
-                style={{ border: "none" }}
+                style={{ border: "none", fontWeight: "bold" }}
               >
                 About us&nbsp;
                 <i className="fa fa-question-circle-o" />
@@ -47,58 +68,16 @@ class Header extends Component {
             </Link>
           </li>
         </ul>
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link
-              to="/register"
-              className="nav-link "
-              style={{ fontSize: "20px" }}
-            >
-              <button
-                type="button"
-                className="btn btn-lg btn-outline-light "
-                style={{ border: "none" }}
-              >
-                Sign up
-              </button>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
-              <button
-                type="button"
-                className="btn btn-lg btn-outline-light "
-                style={{
-                  border: "none"
-                }}
-              >
-                Login
-              </button>
-            </Link>
-          </li>
-        </ul>
+        {links}
       </div>
-    );
+    </nav>
+  );
+};
 
-    return (
-      <nav
-        className="navbar navbar-expand-sm navbar-light "
-        style={{ backgroundColor: "#4b4bf4" }}
-      >
-        <div className="container">
-          <Link to="" className="navbar-brand">
-            <img
-              src={require("../../images/cinema.svg.png")}
-              className="d-inline-block align-top"
-              style={{ height: "42px" }}
-              alt=""
-            />
-          </Link>
-          {userIsNotAuthenticatedNav}
-        </div>
-      </nav>
-    );
-  }
-}
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
 
-export default Header;
+export default connect(mapStateToProps)(Header);

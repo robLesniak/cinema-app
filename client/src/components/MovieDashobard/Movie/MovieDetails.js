@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const MovieDetails = props => {
   const id = props.match.params.movieId;
   const { movie } = props;
+
   if (movie) {
     return (
       <div
@@ -74,7 +75,20 @@ const MovieDetails = props => {
       </div>
     );
   } else {
-    return <div className="container center">...Loading Details...</div>;
+    return (
+      <div
+        class="spinner-grow text-info"
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    );
   }
 };
 
