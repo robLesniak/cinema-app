@@ -10,12 +10,20 @@ class Register extends Component {
     email: "",
     password: "",
     confirmPassword: "",
-    inputBackgroundColor: ""
+    inputBackgroundColor: "",
+    errors: {}
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.signUp(this.state);
+    this.props.history.push("/login");
   };
 
   handleChange = event => {

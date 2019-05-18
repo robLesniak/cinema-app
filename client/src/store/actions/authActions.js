@@ -18,22 +18,31 @@ export const signUp = newUser => {
   };
 };
 
-export const signIn = extUser => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
+export const signIn = credentials => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-    const firestore = getFirestore();
 
     firebase
       .auth()
-      .signInWithEmailAndPassword(extUser.email, extUser.password)
-      .then(resp => {
-        return firestore.collection("users").doc(resp.user.uid);
-      })
+      .signInWithEmailAndPassword(credentials.email, credentials.password)
       .then(() => {
         dispatch({ type: "SIGNIN_SUCCES" });
       })
       .catch(err => {
         dispatch({ type: "SIGNIN_ERROR", err });
+      });
+  };
+};
+
+export const signOut = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch({ type: "SIGNOUT_SUCCESS" });
       });
   };
 };
