@@ -1,4 +1,5 @@
 export const CREATE_MOVIE = "CREATE_MOVIE";
+export const CREATE_COMMENT = "CREATE_COMMENT";
 
 export const SIGNUP_SUCCES = "SIGNUP_SUCCES";
 export const SIGNUP_ERROR = "SIGNUP_ERROR";
