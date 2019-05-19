@@ -24,7 +24,6 @@ class Register extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.signUp(this.state);
-    this.props.history.push("/login");
   };
 
   handleChange = event => {
@@ -43,7 +42,7 @@ class Register extends Component {
 
   render() {
     const { username, email, password, confirmPassword } = this.state;
-    const { auth } = this.props;
+    const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to="/repertoire" />;
     return (
       <div className="container-fluid bg-light py-3">
@@ -64,7 +63,13 @@ class Register extends Component {
                   alt=""
                 />
               </div>
-              <h3 className="text-center mb-2">Sign-up</h3>
+              {authError ? (
+                <h5 style={{ color: "red", fontWeight: "bold" }}>
+                  {authError}
+                </h5>
+              ) : (
+                <h3 className="text-center mb-2">Sign-up</h3>
+              )}
 
               {/* <div class="alert alert-danger">
                   <a class="close font-weight-light" data-dismiss="alert" href="#">×</a>Password is too short.
@@ -89,7 +94,7 @@ class Register extends Component {
                     placeholder="E-mail Address"
                     value={email}
                     name="email"
-                    type="text"
+                    type="email"
                     onChange={this.handleChange}
                     onFocus={this.handleFocus}
                   />
@@ -142,7 +147,8 @@ class Register extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    authError: state.auth.authError
   };
 };
 
