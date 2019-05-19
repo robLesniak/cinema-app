@@ -7,7 +7,12 @@ export const signUp = newUser => {
       .auth()
       .createUserWithEmailAndPassword(newUser.email, newUser.password)
       .then(resp => {
-        return firestore.collection("users").doc(resp.user.uid);
+        return firestore
+          .collection("users")
+          .doc(resp.user.uid)
+          .set({
+            username: newUser.username
+          });
       })
       .then(() => {
         dispatch({ type: "SIGNUP_SUCCES" });
