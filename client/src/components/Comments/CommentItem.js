@@ -17,7 +17,7 @@ const CommentItem = ({ comment }) => {
           backgroundColor: "#d1d1fa"
         }}
       >
-        {comment.date}
+        Posted by {comment.authorUsername} at {comment.date}
       </div>
       <div className="row ">
         <div className="col-md-12 px-3">
