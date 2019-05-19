@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -14,9 +15,9 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.signIn(this.state);
-    if (this.props.authError || this.props.authError === undefined) {
-      this.props.history.push("/repertoire");
-    }
+    //  if (this.props.authError) {
+    //    this.props.history.push("/repertoire");
+    //}
   };
 
   handleChange = event => {
@@ -43,7 +44,8 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state;
-    const { authError } = this.props;
+    const { authError, auth } = this.props;
+    if (auth.uid) return <Redirect to="/repertoire" />;
     return (
       <div className="container-fluid bg-light py-3">
         <div className="row">
@@ -114,7 +116,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebase.auth
   };
 };
 

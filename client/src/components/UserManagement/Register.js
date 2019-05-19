@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { signUp } from "../../store/actions/authActions";
+import { Redirect } from "react-router-dom";
 
 class Register extends Component {
   state = {
@@ -42,6 +43,8 @@ class Register extends Component {
 
   render() {
     const { username, email, password, confirmPassword } = this.state;
+    const { auth } = this.props;
+    if (auth.uid) return <Redirect to="/repertoire" />;
     return (
       <div className="container-fluid bg-light py-3">
         <div className="row">
@@ -137,6 +140,12 @@ class Register extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     signUp: newUser => dispatch(signUp(newUser))
@@ -144,6 +153,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Register);
