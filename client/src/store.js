@@ -24,7 +24,11 @@ if (
     compose(
       applyMiddleware(...middleware),
       reduxFirestore(firebaseConfig),
-      reactReduxFirebase(firebaseConfig, { attachAuthIsReady: true }),
+      reactReduxFirebase(firebaseConfig, {
+        attachAuthIsReady: true,
+        useFirestoreForProfile: true,
+        userProfile: "users"
+      }),
       ReactReduxDevTools
     )
   );
