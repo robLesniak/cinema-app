@@ -5,7 +5,7 @@ import { signOut } from "../../store/actions/authActions";
 import { Link } from "react-router-dom";
 
 const UserIsAuthenticatedNav = props => {
-  const { auth } = props;
+  const { auth, profile } = props;
   return (
     <div>
       <div className="collapse navbar-collapse">
@@ -17,7 +17,7 @@ const UserIsAuthenticatedNav = props => {
                 className="btn btn-lg btn-outline-light "
                 style={{ border: "none", fontWeight: "bold" }}
               >
-                {auth.email.substring(0, auth.email.indexOf("@"))}
+                {profile.username}
                 &nbsp;
                 <i class="fa fa-user-circle" />
               </button>
@@ -53,7 +53,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   };
 };
 
