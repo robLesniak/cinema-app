@@ -3,23 +3,21 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
+import AddComment from "../../Comments/AddComment";
+import CommentList from "../../Comments/CommentList";
 
 const MovieDetails = props => {
   const id = props.match.params.movieId;
   const { movie } = props;
+  const { comments } = props;
 
   if (movie) {
     return (
-      <div
-        className="container"
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)"
-        }}
-      >
-        <div className="row justify-content-md-center">
+      <div className="container" style={{}}>
+        <div
+          className="row justify-content-md-center"
+          style={{ marginBottom: "5px" }}
+        >
           <div className="col col-lg-2" />
           <div
             className="col-md-auto"
@@ -70,14 +68,17 @@ const MovieDetails = props => {
               </div>
             </div>
           </div>
-          <div className="col col-lg-2" />
+          <CommentList comments={comments} />
+        </div>
+        <div className="col md-auto">
+          <AddComment />
         </div>
       </div>
     );
   } else {
     return (
       <div
-        class="spinner-grow text-info"
+        className="spinner-grow text-info"
         style={{
           position: "absolute",
           left: "50%",
@@ -86,7 +87,7 @@ const MovieDetails = props => {
         }}
         role="status"
       >
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
       </div>
     );
   }
@@ -96,12 +97,14 @@ const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.movieId;
   const movies = state.firestore.data.films;
   const movie = movies ? movies[id] : null;
+
   return {
-    movie: movie
+    movie: movie,
+    comments: state.firestore.ordered.comments
   };
 };
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "films" }])
+  firestoreConnect([{ collection: "films" }, { collection: "comments" }])
 )(MovieDetails);
