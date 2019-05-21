@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "BaseAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/clients",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000/"
+    }
+  }
+}

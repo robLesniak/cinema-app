@@ -1,0 +1,15 @@
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI.deps.json
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI.runtimeconfig.json
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI.runtimeconfig.dev.json
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI.dll
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\bin\Release\netcoreapp2.2\linux-x64\BaseAPI.pdb
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.csprojAssemblyReference.cache
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.csproj.CoreCompileInputs.cache
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.RazorAssemblyInfo.cache
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.RazorAssemblyInfo.cs
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.AssemblyInfoInputs.cache
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.AssemblyInfo.cs
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.dll
+C:\Users\Mariusz\source\repos\BaseAPI\BaseAPI\obj\Release\netcoreapp2.2\linux-x64\BaseAPI.pdb
