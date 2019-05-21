@@ -3,7 +3,7 @@
     "BaseAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/clients",
+      "launchUrl": "api/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
