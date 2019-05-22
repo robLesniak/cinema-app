@@ -14,21 +14,21 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    const ref = firebase
+    firebase
       .firestore()
       .collection("films")
       .doc("1EAErymd0w27sK7I908q")
       .get()
       .then(doc => this.setState({ movie1: doc.data() }));
 
-    const ref2 = firebase
+    firebase
       .firestore()
       .collection("films")
       .doc("cDVs1FMasgfDR7iSl3Rl")
       .get()
       .then(doc => this.setState({ movie2: doc.data() }));
 
-    const ref3 = firebase
+    firebase
       .firestore()
       .collection("films")
       .doc("eSDHTbudOcu26lYp9RTn")

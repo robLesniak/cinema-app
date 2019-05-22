@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+          <div className="App" style={{}}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/add/movie" component={AddMovie} />

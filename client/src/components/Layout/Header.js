@@ -14,7 +14,9 @@ const Header = props => {
   return (
     <nav
       className="navbar navbar-expand-sm navbar-light "
-      style={{ backgroundColor: "#4b4bf4" }}
+      style={{
+        backgroundColor: "#4b4bf4"
+      }}
     >
       <div className="container">
         <Link to="" className="navbar-brand">
