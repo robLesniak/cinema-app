@@ -13,12 +13,18 @@ const Header = props => {
   );
   return (
     <nav
-      className="navbar navbar-expand-sm navbar-light "
+      className="navbar navbar-expand-lg navbar-light bg-light"
       style={{
         backgroundColor: "#4b4bf4"
       }}
     >
-      <div className="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      
         <Link to="" className="navbar-brand">
           <img
             src={require("../../images/cinema.svg.png")}
@@ -27,8 +33,9 @@ const Header = props => {
             alt=""
           />
         </Link>
-        <ul className="navbar-nav nav-pills mr-auto">
-          <li className="nav-item nav-divider">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li className="nav-item">
             <Link
               to="/repertoire"
               className="nav-link "
@@ -36,7 +43,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-film" />
@@ -44,7 +51,7 @@ const Header = props => {
               </button>
             </Link>
           </li>
-          <li className="nav-item nav-divider">
+          <li className="nav-item">
             <Link
               to="/priceList"
               className="nav-link"
@@ -52,7 +59,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-money" />
@@ -68,7 +75,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 About us&nbsp;
@@ -76,9 +83,11 @@ const Header = props => {
               </button>
             </Link>
           </li>
+          
         </ul>
         {links}
-      </div>
+        </div>
+        
     </nav>
   );
 };
