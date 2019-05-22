@@ -7,9 +7,9 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      movie1: {},
-      movie2: {},
-      movie3: {}
+      movie1: null,
+      movie2: null,
+      movie3: null
     };
   }
 
@@ -46,7 +46,7 @@ class Landing extends Component {
         <div className="landing">
           <div className="light-overlay landing-inner text-dark">
             <div className="row">
-              <div className="col-md-12 text-center">
+              <div className="col-md-12 text-center ">
                 <h4 className="display-4 mb-4">Welcome to our page</h4>
                 <img
                   className="img-fluid"
@@ -89,43 +89,67 @@ class Landing extends Component {
             style={{ marginTop: "5px" }}
           >
             <div className="col col-lg-2">
-              <Link
-                to="/repertoire/1EAErymd0w27sK7I908q/details"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <h5 style={{ fontStyle: "italic", textAlign: "center" }}>
-                  {this.state.movie1.title}
-                </h5>
+              {this.state.movie1 == null ? (
+                <div className="spinner-grow text-info" role="status" />
+              ) : (
+                <Link
+                  to="/repertoire/1EAErymd0w27sK7I908q/details"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <h5 style={{ fontStyle: "italic", textAlign: "center" }}>
+                    {this.state.movie1.title}
+                  </h5>
 
-                <img className="rounded" src={this.state.movie1.image} alt="" />
-              </Link>
+                  <img
+                    className="rounded"
+                    src={this.state.movie1.image}
+                    alt=""
+                  />
+                </Link>
+              )}
             </div>
             <div
               className="col col-lg-2"
               style={{ marginRight: "40px", marginLeft: "40px" }}
             >
               {" "}
-              <Link
-                to="/repertoire/cDVs1FMasgfDR7iSl3Rl/details"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <h5 style={{ fontStyle: "italic" }}>
-                  {this.state.movie2.title}
-                </h5>
-                <img className="rounded" src={this.state.movie2.image} alt="" />
-              </Link>
+              {this.state.movie2 == null ? (
+                <div className="spinner-grow text-info" role="status" />
+              ) : (
+                <Link
+                  to="/repertoire/cDVs1FMasgfDR7iSl3Rl/details"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <h5 style={{ fontStyle: "italic" }}>
+                    {this.state.movie2.title}
+                  </h5>
+                  <img
+                    className="rounded"
+                    src={this.state.movie2.image}
+                    alt=""
+                  />
+                </Link>
+              )}
             </div>
             <div className="col col-lg-2">
               {" "}
-              <Link
-                to="/repertoire/eSDHTbudOcu26lYp9RTn/details"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <h5 style={{ fontStyle: "italic" }}>
-                  {this.state.movie3.title}
-                </h5>
-                <img className="rounded" src={this.state.movie3.image} alt="" />
-              </Link>
+              {this.state.movie3 == null ? (
+                <div className="spinner-grow text-info" role="status" />
+              ) : (
+                <Link
+                  to="/repertoire/eSDHTbudOcu26lYp9RTn/details"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <h5 style={{ fontStyle: "italic" }}>
+                    {this.state.movie3.title}
+                  </h5>
+                  <img
+                    className="rounded"
+                    src={this.state.movie3.image}
+                    alt=""
+                  />
+                </Link>
+              )}
             </div>
           </div>
         </div>
