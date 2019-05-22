@@ -3,7 +3,7 @@ import React from "react";
 const CommentItem = ({ comment }) => {
   return (
     <div
-      className="card"
+      className="card col-md-12 text-center"
       style={{
         marginBottom: "5px",
         width: "650px"
@@ -21,7 +21,10 @@ const CommentItem = ({ comment }) => {
       </div>
       <div className="row ">
         <div className="col-md-12 px-3">
-          <p className="card-text" style={{ textAlign: "center" }}>
+          <p
+            className="card-text col-md-12 text-center"
+            style={{ textAlign: "center" }}
+          >
             {comment.body}
           </p>
         </div>

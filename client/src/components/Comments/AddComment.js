@@ -7,7 +7,8 @@ class AddComment extends Component {
     super();
     this.state = {
       body: "",
-      date: ""
+      date: "",
+      movieId: ""
     };
   }
 
@@ -39,28 +40,26 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div className="comment" style={{ width: "750px" }}>
-        <form onSubmit={this.onSubmit}>
-          <textarea
-            class="form-control"
-            style={{ height: "100px" }}
-            name="body"
-            rows="3"
-            onChange={this.onChange}
-          />
-          <button
-            type="submit"
-            className="btn btn-block mt-4"
-            style={{
-              backgroundColor: "#7070EF",
-              fontWeight: "bold",
-              color: "white"
-            }}
-            placeholder="Comment"
-          >
-            Comment{" "}
-          </button>
-        </form>
+      <div className="md-12 text-center" style={{ marginBottom: "5px" }}>
+        <textarea
+          className="form-control"
+          style={{ height: "100px" }}
+          name="body"
+          rows="3"
+          onChange={this.onChange}
+        />
+        <button
+          onClick={this.onSubmit}
+          className="btn btn-block"
+          style={{
+            backgroundColor: "#7070EF",
+            fontWeight: "bold",
+            color: "white",
+            marginBottom: "5px"
+          }}
+        >
+          Comment{" "}
+        </button>
       </div>
     );
   }

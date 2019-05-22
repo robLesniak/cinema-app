@@ -6,16 +6,12 @@ const CommentList = ({ comments }) => {
     <div>
       <div className="container">
         <div
-          style={{
-            height: "300px",
-            overflowY: "auto",
-            overflowX: "hidden",
-            marginBottom: "5px"
-          }}
+          className="col-md-auto "
+          style={{ overflowY: "auto", overflowX: "hidden" }}
         >
           {comments &&
             comments.map(comment => {
-              return <CommentItem comment={comment} key={comment.date} />;
+              return <CommentItem comment={comment} key={comment.id} />;
             })}
         </div>
       </div>

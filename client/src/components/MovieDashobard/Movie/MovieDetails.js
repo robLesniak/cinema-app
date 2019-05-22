@@ -10,7 +10,7 @@ const MovieDetails = props => {
   const id = props.match.params.movieId;
   const { movie } = props;
   const { comments } = props;
-
+  const { auth } = props;
   if (movie) {
     return (
       <div className="container" style={{}}>
@@ -18,7 +18,6 @@ const MovieDetails = props => {
           className="row justify-content-md-center"
           style={{ marginBottom: "5px" }}
         >
-          <div className="col col-lg-2" />
           <div
             className="col-md-auto"
             style={{ marginTop: "5px", marginBottom: "5px" }}
@@ -50,29 +49,45 @@ const MovieDetails = props => {
                     <p className="card-text">
                       Duration: {movie.duration} mins{" "}
                     </p>
-
-                    <Link
-                      to={`/repertoire/${id}`}
-                      className="btn btn-lg"
-                      style={{
-                        backgroundColor: "#7070EF",
-                        color: "white",
-                        marginLeft: "5px",
-                        marginBottom: "5px"
-                      }}
-                    >
-                      &nbsp;Avaiability&nbsp;
-                    </Link>
+                    {auth.uid ? (
+                      <Link
+                        to={`/repertoire/${id}`}
+                        className="btn btn-lg btn-outline-light mr-2"
+                        style={{
+                          backgroundColor: "#7070EF",
+                          fontwe: "bold",
+                          marginLeft: "5px",
+                          marginBottom: "5px",
+                          border: "none"
+                        }}
+                      >
+                        &nbsp;Avaiability&nbsp;
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/login"
+                        className="btn btn-lg btn-outline-light mr-2"
+                        style={{
+                          backgroundColor: "#7070EF",
+                          marginLeft: "5px",
+                          marginBottom: "5px",
+                          border: "none",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Log in to get full experience
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <CommentList comments={comments} />
+          <div className="col-md-auto">
+            <CommentList comments={comments} />
+          </div>
         </div>
-        <div className="col md-auto">
-          <AddComment />
-        </div>
+        <div className="col md-auto">{auth.uid ? <AddComment /> : null}</div>
       </div>
     );
   } else {
@@ -100,7 +115,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     movie: movie,
-    comments: state.firestore.ordered.comments
+    comments: state.firestore.ordered.comments,
+    auth: state.firebase.auth
   };
 };
 
