@@ -44,7 +44,11 @@ const Header = props => {
             </Link>
           </li>
           <li className="nav-item nav-divider">
-            <Link to="" className="nav-link" style={{ fontSize: "20px" }}>
+            <Link
+              to="/priceList"
+              className="nav-link"
+              style={{ fontSize: "20px" }}
+            >
               <button
                 type="button"
                 className="btn btn-lg btn-outline-light "
