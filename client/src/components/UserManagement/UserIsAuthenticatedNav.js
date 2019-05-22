@@ -6,14 +6,13 @@ import { Link } from "react-router-dom";
 
 import Avatar from "react-avatar";
 
-
 const UserIsAuthenticatedNav = props => {
   // const icon = <i class="fa fa-user-circle" />;
   const { auth, profile } = props;
   return (
     <div>
       <div className="collapse navbar-collapse">
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav ml-auto" style={{ alignItems: "center" }}>
           <li className="nav-item">
             <Link to="/" className="nav-link " style={{ fontSize: "20px" }}>
               <button
@@ -21,12 +20,15 @@ const UserIsAuthenticatedNav = props => {
                 className="btn btn-lg btn-outline-light "
                 style={{ border: "none", fontWeight: "bold" }}
               >
-                {profile.username ? 
-                    profile.username 
-                  : 
-                    <Avatar facebookId={auth.providerData[0].uid} size="50" round={true}/>
-                }
-                
+                {profile.username ? (
+                  profile.username
+                ) : (
+                  <Avatar
+                    facebookId={auth.providerData[0].uid}
+                    size="50"
+                    round={true}
+                  />
+                )}
               </button>
             </Link>
           </li>

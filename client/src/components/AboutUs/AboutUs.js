@@ -5,7 +5,7 @@ export default class AboutUs extends Component {
     return (
       <div className="col-md-12 text-center">
         <h1 className="display-4" style={{}}>
-          Who we are ? <i class="fa fa-video" />
+          Who we are ? <i className="fa fa-video" />
         </h1>
         <p className="lead" style={{ fontSize: "22px" }}>
           We are Premium Cinema, who is involved with the most famous movie
@@ -15,14 +15,28 @@ export default class AboutUs extends Component {
         <h1 className="display-4" style={{}}>
           Our goal is to:
         </h1>
-        <p className="lead" style={{ fontSize: "22px" }}>
-          <ul class="">
-            <li class="">provide the best possible user experience</li>
-            <li class="">best app performence possible</li>
-            <li class="">make our customers happy as much as possible</li>
-            <li className="">make customers able leave their opinions</li>
-          </ul>{" "}
-        </p>
+        <ul className="">
+          <li className="">
+            <p className="lead" style={{ fontSize: "22px" }}>
+              provide the best possible user experience
+            </p>
+          </li>
+          <li className="">
+            <p className="lead" style={{ fontSize: "22px" }}>
+              best app performence possible
+            </p>
+          </li>
+          <li className="">
+            <p className="lead" style={{ fontSize: "22px" }}>
+              make our customers happy as much as possible
+            </p>
+          </li>
+          <li className="">
+            <p className="lead" style={{ fontSize: "22px" }}>
+              make customers able leave their opinions
+            </p>
+          </li>
+        </ul>{" "}
         <h1 className="display-4" style={{}}>
           Contact us using one of these below
         </h1>
