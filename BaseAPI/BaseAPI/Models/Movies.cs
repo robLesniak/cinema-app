@@ -15,7 +15,7 @@ namespace BaseAPI.Models
         public List<Genre> genres { get; set; }
         public List<Trailer> trailers { get; set; }
         public List<Poster> posters { get; set; }
-        public List<Role> role { get; set; }
+        public List<Roles> role { get; set; }
 
     }
 }

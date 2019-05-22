@@ -13,5 +13,6 @@ namespace BaseAPI.Models
         public string personFirstName { get; set; }
         public string personLastName { get; set; }
         public string personPicture { get; set; }
+
     }
 }

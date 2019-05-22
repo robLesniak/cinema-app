@@ -13,20 +13,24 @@ namespace BaseAPI.Controllers
         public AllMoviesController(DataBaseContext webAPIDataContext)
         {
             _context = webAPIDataContext;
-            _context.Database.EnsureCreated();
+                _context.Database.EnsureCreated();
         }
 
         [HttpGet]
         public IQueryable<Movies> GetAllMovies()
         {
+            var persons = _context.person.ToList();
+
+
+
             var result = new DataSource()
             {
                 genreMovies = _context.movie_genre.ToList(),
                 genre = _context.genre.ToList(),
                 trailer = _context.trailer.ToList(),
                 poster = _context.poster.ToList(),
-                role = _context.role.ToList(),
-                person = _context.person.ToList(),
+                role = _context.role.Select(x=>x.Get(persons)).ToList(),
+
             };
 
             return _context.movie.Select(x => x.Get(result));

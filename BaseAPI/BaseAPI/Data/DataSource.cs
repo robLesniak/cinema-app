@@ -12,7 +12,6 @@ namespace BaseAPI.Data
         public List<Genre> genre { get; set; }
         public List<Trailer> trailer { get; set; }
         public List<Poster> poster { get; set; }
-        public List<Role> role { get; set; }
-        public List<Person> person { get; set; }
+        public List<Roles> role { get; set; }
     }
 }
