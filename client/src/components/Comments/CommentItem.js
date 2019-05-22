@@ -1,4 +1,5 @@
 import React from "react";
+import Avatar from "react-avatar";
 
 const CommentItem = ({ comment }) => {
   return (
@@ -18,6 +19,17 @@ const CommentItem = ({ comment }) => {
         }}
       >
         Posted by {comment.authorUsername} at {comment.date}
+        {comment.facebookId
+          ? (console.log(comment.facebookId),
+            (
+              <Avatar
+                facebookId={comment.facebookId}
+                round={true}
+                size="40"
+                style={{ marginLeft: "5px" }}
+              />
+            ))
+          : null}
       </div>
       <div className="row ">
         <div className="col-md-12 px-3">
