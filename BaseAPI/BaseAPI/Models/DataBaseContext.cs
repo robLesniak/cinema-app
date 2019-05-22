@@ -14,5 +14,10 @@ namespace BaseAPI.Models
         public DbSet<Role> role { get; set; }
         public DbSet<Poster> poster { get; set; }
         public DbSet<Person> person { get; set; }
+
+        public DbSet<Seat> seat { get; set; }
+        public DbSet<Hall> hall { get; set; }
+        public DbSet<HallMovie> hall_movie { get; set; }
+
     }
 }
