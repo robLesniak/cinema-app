@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -99,12 +99,18 @@ class Login extends Component {
                     onBlur={this.handleBlurPassword}
                   />
                 </div>
+
                 <input
                   className="btn btn-lg btn-primary btn-block"
                   value="Log me in"
                   type="submit"
                   style={{ backgroundColor: "#7070EF" }}
                 />
+                <Link to="/register">
+                  <p style={{ fontSize: "12px" }}>
+                    You don't have account yet ? Click here to sign up
+                  </p>
+                </Link>
               </form>
             </div>
           </div>
