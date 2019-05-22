@@ -13,6 +13,7 @@ import MovieAvaiability from "./components/MovieDashobard/Movie/MovieAvaiability
 import MovieDetails from "./components/MovieDashobard/Movie/MovieDetails";
 import Landing from "./components/Layout/Landing";
 import PriceList from "./components/PriceList/PriceList";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/repertoire" component={Dashboard} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/priceList" component={PriceList} />
+            <Route exact path="/aboutUs" component={AboutUs} />
             <Route
               exact
               path={"/repertoire/:movieId"}
@@ -36,6 +38,11 @@ class App extends Component {
               exact
               path={"/repertoire/:movieId/details"}
               component={MovieDetails}
+            />
+            <Route
+              exact
+              path={"/repertoire/:movieId/:idx"}
+              component={AboutUs}
             />
           </div>
         </Router>
