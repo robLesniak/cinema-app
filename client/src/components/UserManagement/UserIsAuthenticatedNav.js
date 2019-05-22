@@ -4,7 +4,11 @@ import { signOut } from "../../store/actions/authActions";
 
 import { Link } from "react-router-dom";
 
+import Avatar from "react-avatar";
+
+
 const UserIsAuthenticatedNav = props => {
+  // const icon = <i class="fa fa-user-circle" />;
   const { auth, profile } = props;
   return (
     <div>
@@ -17,9 +21,12 @@ const UserIsAuthenticatedNav = props => {
                 className="btn btn-lg btn-outline-light "
                 style={{ border: "none", fontWeight: "bold" }}
               >
-                {profile.username}
-                &nbsp;
-                <i class="fa fa-user-circle" />
+                {profile.username ? 
+                    profile.username 
+                  : 
+                    <Avatar facebookId={auth.providerData[0].uid} size="50" round={true}/>
+                }
+                
               </button>
             </Link>
           </li>

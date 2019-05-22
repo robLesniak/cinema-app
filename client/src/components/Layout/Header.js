@@ -6,7 +6,6 @@ import UserIsNotAuthenticatedNav from "../UserManagement/UserIsNotAuthenticatedN
 
 const Header = props => {
   const { auth } = props;
-  console.log(auth);
   const links = auth.uid ? (
     <UserIsAuthenticatedNav />
   ) : (
