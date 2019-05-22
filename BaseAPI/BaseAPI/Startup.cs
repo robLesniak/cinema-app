@@ -24,7 +24,7 @@ namespace BaseAPI
             
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<DataBaseContext>(options =>
+            services.AddDbContext<DataBaseContext>( options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
         }
 

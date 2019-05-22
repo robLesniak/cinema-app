@@ -1,6 +1,7 @@
 ﻿using BaseAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using BaseAPI.Data;
 
 namespace BaseAPI.Controllers
 {
@@ -18,10 +19,17 @@ namespace BaseAPI.Controllers
         [HttpGet]
         public IQueryable<Movies> GetAllMovies()
         {
-            var genre = _context.genre.ToList();
-            var genreMovie = _context.movie_genre.ToList();
+            var result = new DataSource()
+            {
+                genreMovies = _context.movie_genre.ToList(),
+                genre = _context.genre.ToList(),
+                trailer = _context.trailer.ToList(),
+                poster = _context.poster.ToList(),
+                role = _context.role.ToList(),
+                person = _context.person.ToList(),
+            };
 
-            return _context.movie.Select(x => x.Get(genre, genreMovie));
+            return _context.movie.Select(x => x.Get(result));
         }
     }
 }

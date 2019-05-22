@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using BaseAPI.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -13,21 +14,26 @@ namespace BaseAPI.Models
         public string movieReleaseDate { get; set; }
         public string movieRating { get; set; }
 
-        List<Genre> movieGenres { get; set; }
-
-        public Movies Get(List<Genre> g, List<GenreMovie> gm)
+        public Movies Get(DataSource data)
         {
-            var first = gm.Where(x => x.m_movieID == this.movieID).ToList();
-            var genres = g.Where(x => first.Select(y=>y.g_genreID).Contains(x.genreID)).ToList();
+            var helper = data.genreMovies.Where(x => x.m_movieID == this.movieID).ToList();
+            var genres = data.genre.Where(x => helper.Select(y => y.g_genreID).Contains(x.genreID)).ToList();
+            var trailers = data.trailer.Where(x => x.t_movieID == this.movieID).ToList();
+            var posters = data.poster.Where(x => x.p_movieID == this.movieID).ToList();
+            var role = data.role.Where(x => x.m_movieID == this.movieID).ToList();
+            var persons = data.person.Where(x => role.Select(y => y.p_personID).Contains(x.personID)).ToList();
 
             return new Movies
             {
-                movieID = this.movieID,
-                movieTitle = this.movieTitle,
-                movieDesc = this.movieDesc,
-                movieReleaseDate = this.movieReleaseDate,
-                movieRating = this.movieRating,
-                movieGenres = genres
+                id = this.movieID,
+                title = this.movieTitle,
+                description = this.movieDesc,
+                releaseDate = this.movieReleaseDate,
+                rating = this.movieRating,
+                genres = genres,
+                trailers = trailers,
+                posters = posters,
+                role = role
             };
         }
     }
