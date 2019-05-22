@@ -13153,11 +13153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mariusz\\Desktop\\BaseAPI\\BaseAPI\\BaseAPI\\BaseAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Mariusz\\Desktop\\SPA\\cinema-app\\BaseAPI\\BaseAPI\\BaseAPI.csproj",
       "projectName": "BaseAPI",
-      "projectPath": "C:\\Users\\Mariusz\\Desktop\\BaseAPI\\BaseAPI\\BaseAPI\\BaseAPI.csproj",
+      "projectPath": "C:\\Users\\Mariusz\\Desktop\\SPA\\cinema-app\\BaseAPI\\BaseAPI\\BaseAPI.csproj",
       "packagesPath": "C:\\Users\\Mariusz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mariusz\\Desktop\\BaseAPI\\BaseAPI\\BaseAPI\\obj\\",
+      "outputPath": "C:\\Users\\Mariusz\\Desktop\\SPA\\cinema-app\\BaseAPI\\BaseAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
