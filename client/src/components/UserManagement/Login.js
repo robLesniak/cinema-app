@@ -2,15 +2,34 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
+import { Redirect } from "react-router-dom";
+import { provider, auth } from "../../config/firebaseConfig";
 import { Redirect, Link } from "react-router-dom";
+
+import "./style.css"
+
 
 class Login extends Component {
   state = {
     email: "",
     password: "",
     passwordColor: "",
-    emailColor: ""
+    emailColor: "",
+    user: null
   };
+
+  login = () => {
+    auth().signInWithPopup(provider)
+      .then(({ user }) => {
+        this.setState({ user })
+      })
+  }
+
+  logout = () => {
+    auth().signOut().then(() => {
+      this.setState({user: null}) 
+    })
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -41,6 +60,7 @@ class Login extends Component {
   handleBlurEmail = () => {
     this.setState({ emailColor: "#FFFFFF" });
   };
+
 
   render() {
     const { email, password } = this.state;
@@ -112,6 +132,9 @@ class Login extends Component {
                   </p>
                 </Link>
               </form>
+              <button className="facebook_button" onClick={this.login}>
+                Login with Facebook
+              </button>
             </div>
           </div>
         </div>

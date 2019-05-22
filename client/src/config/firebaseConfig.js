@@ -13,5 +13,7 @@ var config = {
 
 firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true });
+export const auth = firebase.auth
+export const provider = new firebase.auth.FacebookAuthProvider()
 
 export default firebase;
