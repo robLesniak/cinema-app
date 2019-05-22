@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
 import { provider, auth } from "../../config/firebaseConfig";
 import { Redirect, Link } from "react-router-dom";
+import firebase from "../../config/firebaseConfig";
 
 import "./style.css"
 
@@ -14,13 +15,21 @@ class Login extends Component {
     password: "",
     passwordColor: "",
     emailColor: "",
-    user: null
+    user: null,
+    username: ""
   };
 
   login = () => {
     auth().signInWithPopup(provider)
       .then(({ user }) => {
-        this.setState({ user })
+        console.log("eloelo")
+        this.setState({ user: user })
+        console.log( this.state.user.displayName)
+        firebase
+      .firestore()
+      .collection("users").add(({
+        username: this.state.user.displayName
+      }))
       })
   }
 
