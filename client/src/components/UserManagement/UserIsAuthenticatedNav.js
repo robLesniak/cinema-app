@@ -10,14 +10,12 @@ const UserIsAuthenticatedNav = props => {
   // const icon = <i class="fa fa-user-circle" />;
   const { auth, profile } = props;
   return (
-    <div>
-      <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto" style={{ alignItems: "center" }}>
           <li className="nav-item">
             <Link to="/" className="nav-link " style={{ fontSize: "20px" }}>
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 {profile.username ? (
@@ -36,7 +34,7 @@ const UserIsAuthenticatedNav = props => {
             <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{
                   border: "none",
                   fontWeight: "bold"
@@ -47,10 +45,7 @@ const UserIsAuthenticatedNav = props => {
               </button>
             </Link>
           </li>
-          <li className="nav-item" />
         </ul>
-      </div>
-    </div>
   );
 };
 

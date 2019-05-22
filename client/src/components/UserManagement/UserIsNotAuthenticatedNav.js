@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function UserIsNotAuthenticatedNav() {
   return (
-    <div>
-      <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link
@@ -14,7 +12,7 @@ export default function UserIsNotAuthenticatedNav() {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 Sign up
@@ -25,7 +23,7 @@ export default function UserIsNotAuthenticatedNav() {
             <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
               <button
                 type="button"
-                className="btn btn-lg btn-outline-light "
+                className="btn btn-lg btn-outline"
                 style={{
                   border: "none",
                   fontWeight: "bold"
@@ -36,7 +34,5 @@ export default function UserIsNotAuthenticatedNav() {
             </Link>
           </li>
         </ul>
-      </div>
-    </div>
   );
 }
