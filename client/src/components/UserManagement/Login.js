@@ -5,6 +5,8 @@ import { signIn } from "../../store/actions/authActions";
 import { Redirect } from "react-router-dom";
 import { provider, auth } from "../../config/firebaseConfig";
 
+import "./style.css"
+
 class Login extends Component {
   state = {
     email: "",
@@ -122,7 +124,7 @@ class Login extends Component {
                   style={{ backgroundColor: "#7070EF" }}
                 />
               </form>
-              <button onClick={this.login}>
+              <button className="facebook_button" onClick={this.login}>
                 Login with Facebook
               </button>
             </div>
