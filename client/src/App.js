@@ -39,11 +39,7 @@ class App extends Component {
               path={"/repertoire/:movieId/details"}
               component={MovieDetails}
             />
-            <Route
-              exact
-              path={"/repertoire/:movieId/:idx"}
-              component={AboutUs}
-            />
+            <Route exact path={"/repertoire/:movieId/:idx"} component={null} />
           </div>
         </Router>
       </Provider>
