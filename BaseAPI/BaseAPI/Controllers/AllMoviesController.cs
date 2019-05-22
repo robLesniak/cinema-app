@@ -17,12 +17,9 @@ namespace BaseAPI.Controllers
         }
 
         [HttpGet]
-        public IQueryable<Movies> GetAllMovies()
-        {
+        public IQueryable<Movies> GetAllMovies(string search)
+        {            
             var persons = _context.person.ToList();
-
-
-
             var result = new DataSource()
             {
                 genreMovies = _context.movie_genre.ToList(),
@@ -33,7 +30,16 @@ namespace BaseAPI.Controllers
 
             };
 
-            return _context.movie.Select(x => x.Get(result));
+            if (search != null)
+                return _context.movie.Where(x=>x.movieTitle.Contains(search)).Select(x => x.Get(result));
+            else
+                return _context.movie.Select(x => x.Get(result));
+        }
+        [Route("movies/{value}")]
+        [HttpGet]
+        public string GetQuery([FromQuery]string firstName)
+        {
+            return $"{firstName}";
         }
     }
 }
