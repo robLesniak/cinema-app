@@ -30,7 +30,6 @@ C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\bin\Debug\netcoreapp2.2\
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\bin\Debug\netcoreapp2.2\BaseAPI.dll
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\bin\Debug\netcoreapp2.2\BaseAPI.pdb
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\bin\Debug\netcoreapp2.2\BaseAPI.Views.dll
-C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\bin\Debug\netcoreapp2.2\BaseAPI.Views.pdb
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\obj\Debug\netcoreapp2.2\BaseAPI.csproj.CoreCompileInputs.cache
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\obj\Debug\netcoreapp2.2\BaseAPI.RazorAssemblyInfo.cache
 C:\Users\Mariusz\Desktop\SPA\cinema-app\BaseAPI\BaseAPI\obj\Debug\netcoreapp2.2\BaseAPI.RazorAssemblyInfo.cs

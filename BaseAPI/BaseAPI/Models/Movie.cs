@@ -20,8 +20,7 @@ namespace BaseAPI.Models
             var genres = data.genre.Where(x => helper.Select(y => y.g_genreID).Contains(x.genreID)).ToList();
             var trailers = data.trailer.Where(x => x.t_movieID == this.movieID).ToList();
             var posters = data.poster.Where(x => x.p_movieID == this.movieID).ToList();
-            var role = data.role.Where(x => x.m_movieID == this.movieID).ToList();
-            var persons = data.person.Where(x => role.Select(y => y.p_personID).Contains(x.personID)).ToList();
+            var role = data.role.Where(x => x.movieID == this.movieID).ToList();
 
             return new Movies
             {
