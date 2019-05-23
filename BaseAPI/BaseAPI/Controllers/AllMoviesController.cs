@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BaseAPI.Data;
+using Microsoft.AspNetCore.Cors;
 
 namespace BaseAPI.Controllers
 {
     [Route("api/movies")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class AllMoviesController : ControllerBase
     {
         private DataBaseContext _context;
@@ -16,6 +18,7 @@ namespace BaseAPI.Controllers
                 _context.Database.EnsureCreated();
         }
 
+        [EnableCors("AllowOrigin")]
         [HttpGet]
         public IQueryable<Movies> GetAllMovies(string search)
         {            
@@ -35,11 +38,23 @@ namespace BaseAPI.Controllers
             else
                 return _context.movie.Select(x => x.Get(result));
         }
-        [Route("movies/{value}")]
-        [HttpGet]
-        public string GetQuery([FromQuery]string firstName)
+
+        [EnableCors("AllowOrigin")]
+        [HttpGet("{id}")]
+        public IQueryable<Movies> GetAllMoviesId(int id)
         {
-            return $"{firstName}";
+            var persons = _context.person.ToList();
+            var result = new DataSource()
+            {
+                genreMovies = _context.movie_genre.ToList(),
+                genre = _context.genre.ToList(),
+                trailer = _context.trailer.ToList(),
+                poster = _context.poster.ToList(),
+                role = _context.role.Select(x => x.Get(persons)).ToList(),
+
+            };
+
+            return _context.movie.Where(x=>x.movieID == id).Select(x => x.Get(result));
         }
     }
 }

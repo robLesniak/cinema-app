@@ -23,6 +23,11 @@ namespace BaseAPI
         {
             
             services.AddCors();
+            services.AddCors(option => 
+            {
+                option.AddPolicy("AllowOrigin", builder => builder.WithOrigins("http://api.mariuszek.tk:5000/"));
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<DataBaseContext>( options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
@@ -30,11 +35,14 @@ namespace BaseAPI
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors("AllowOrigin");
+
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else      
                 app.UseHsts();
 
+            
             app.UseMvc();
         }
     }
