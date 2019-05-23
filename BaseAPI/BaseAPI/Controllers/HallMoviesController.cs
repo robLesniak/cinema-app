@@ -31,16 +31,11 @@ namespace BaseAPI.Controllers
 
         // GET: api/HallMovies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<HallMovie>> GetHallMovie(int id)
+        public async Task<ActionResult<HallMovieWIthSeats>> GetHallMovie(int id)
         {
-            var hallMovie = await _context.hall_movie.FindAsync(id);
+            var seats = _context.seat.ToList();
 
-            if (hallMovie == null)
-            {
-                return NotFound();
-            }
-
-            return hallMovie;
+            return await _context.hall_movie.Where(x=>x.m_movieID == id).Select(x => x.Get(seats)).FirstOrDefaultAsync();
         }
 
         // PUT: api/HallMovies/5
