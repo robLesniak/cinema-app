@@ -17,21 +17,21 @@ class Landing extends Component {
     firebase
       .firestore()
       .collection("films")
-      .doc("1EAErymd0w27sK7I908q")
+      .doc("CkRC39k4mtmzo7IonZsE")
       .get()
       .then(doc => this.setState({ movie1: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("cDVs1FMasgfDR7iSl3Rl")
+      .doc("Diduq8NT4DpXBCjOsu2H")
       .get()
       .then(doc => this.setState({ movie2: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("eSDHTbudOcu26lYp9RTn")
+      .doc("piUabYOks6Ivm2VRgDg6")
       .get()
       .then(doc => this.setState({ movie3: doc.data() }));
   }
@@ -93,7 +93,7 @@ class Landing extends Component {
                 <div className="spinner-grow text-info" role="status" />
               ) : (
                 <Link
-                  to="/repertoire/1EAErymd0w27sK7I908q/details"
+                  to="/repertoire/CkRC39k4mtmzo7IonZsE/details"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <h5 style={{ fontStyle: "italic", textAlign: "center" }}>
@@ -117,7 +117,7 @@ class Landing extends Component {
                 <div className="spinner-grow text-info" role="status" />
               ) : (
                 <Link
-                  to="/repertoire/cDVs1FMasgfDR7iSl3Rl/details"
+                  to="/repertoire/Diduq8NT4DpXBCjOsu2H/details"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <h5 style={{ fontStyle: "italic" }}>
@@ -137,7 +137,7 @@ class Landing extends Component {
                 <div className="spinner-grow text-info" role="status" />
               ) : (
                 <Link
-                  to="/repertoire/eSDHTbudOcu26lYp9RTn/details"
+                  to="/repertoire/piUabYOks6Ivm2VRgDg6/details"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <h5 style={{ fontStyle: "italic" }}>
