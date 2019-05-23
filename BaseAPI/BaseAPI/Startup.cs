@@ -44,8 +44,7 @@ namespace BaseAPI
             app.UseCors(builder => builder
     .AllowAnyOrigin()
     .AllowAnyMethod()
-    .AllowAnyHeader()
-    .AllowCredentials());
+    .AllowAnyHeader());
 
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
