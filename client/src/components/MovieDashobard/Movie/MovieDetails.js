@@ -5,12 +5,14 @@ import { compose } from "redux";
 import { Link } from "react-router-dom";
 import AddComment from "../../Comments/AddComment";
 import CommentList from "../../Comments/CommentList";
+import ReactPlayer from "react-player";
 
 const MovieDetails = props => {
   const id = props.match.params.movieId;
   const { movie } = props;
   const { comments } = props;
   const { auth } = props;
+
   if (movie) {
     return (
       <div className="container" style={{}}>
@@ -36,6 +38,37 @@ const MovieDetails = props => {
               <div className="row ">
                 <div className="col-md-4">
                   <img className="" src={movie.image} alt="" />
+                  {auth.uid ? (
+                    <Link
+                      to={`/repertoire/${id}`}
+                      className="btn btn-lg btn-outline-light mr-2"
+                      style={{
+                        backgroundColor: "#7070EF",
+                        fontwe: "bold",
+                        marginLeft: "5px",
+                        marginBottom: "5px",
+                        marginTop: "5px",
+                        border: "none"
+                      }}
+                    >
+                      &nbsp;Avaiability&nbsp;
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="btn btn-lg btn-outline-light mr-2"
+                      style={{
+                        backgroundColor: "#7070EF",
+                        marginLeft: "5px",
+                        marginBottom: "5px",
+                        border: "none",
+                        marginTop: "5px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Log in to get full experience
+                    </Link>
+                  )}
                 </div>
                 <div className="col-md-8 px-3">
                   <div
@@ -46,51 +79,27 @@ const MovieDetails = props => {
                     <p className="card-tex">{movie.plot}</p>
                     <p className="card-text">Actors: {movie.actors}</p>
                     <p className="card-text">Director: {movie.director}</p>
+                    <p className="card-text">Writer: {movie.writer}</p>
                     <p className="card-text">
                       Duration: {movie.duration} mins{" "}
                     </p>
-                    {auth.uid ? (
-                      <Link
-                        to={`/repertoire/${id}`}
-                        className="btn btn-lg btn-outline-light mr-2"
-                        style={{
-                          backgroundColor: "#7070EF",
-                          fontwe: "bold",
-                          marginLeft: "5px",
-                          marginBottom: "5px",
-                          border: "none"
-                        }}
-                      >
-                        &nbsp;Avaiability&nbsp;
-                      </Link>
-                    ) : (
-                      <Link
-                        to="/login"
-                        className="btn btn-lg btn-outline-light mr-2"
-                        style={{
-                          backgroundColor: "#7070EF",
-                          marginLeft: "5px",
-                          marginBottom: "5px",
-                          border: "none",
-                          fontWeight: "bold"
-                        }}
-                      >
-                        Log in to get full experience
-                      </Link>
-                    )}
+                    <ReactPlayer
+                      url={movie.trailerURL}
+                      pip="true"
+                      width="auto"
+                      controls="true"
+                      style={{ marginBottom: "20px", marginRight: "30px" }}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-          <div className="col-md-auto">
-            <CommentList comments={comments} />
-          </div>
-          <div className="col-md-auto">
-            {auth.uid ? <AddComment /> : null}
-          </div>
-        
+        </div>
+        <div className="col-md-auto">
+          <CommentList comments={comments} />
+        </div>
+        <div className="col-md-auto">{auth.uid ? <AddComment /> : null}</div>
       </div>
     );
   } else {
