@@ -83,11 +83,14 @@ const MovieDetails = props => {
               </div>
             </div>
           </div>
+          </div>
           <div className="col-md-auto">
             <CommentList comments={comments} />
           </div>
-        </div>
-        <div className="col md-auto">{auth.uid ? <AddComment /> : null}</div>
+          <div className="col-md-auto">
+            {auth.uid ? <AddComment /> : null}
+          </div>
+        
       </div>
     );
   } else {

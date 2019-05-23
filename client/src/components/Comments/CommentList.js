@@ -6,7 +6,7 @@ const CommentList = ({ comments }) => {
     <div>
       <div className="container">
         <div
-          className="col-md-auto "
+          className="row justify-content-sm-center"
           style={{ overflowY: "auto", overflowX: "hidden" }}
         >
           {comments &&
