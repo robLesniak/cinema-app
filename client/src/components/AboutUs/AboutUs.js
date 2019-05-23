@@ -16,26 +16,18 @@ export default class AboutUs extends Component {
           Our goal is to:
         </h1>
         <ul className="">
-          <li className="">
-            <p className="lead" style={{ fontSize: "22px" }}>
-              provide the best possible user experience
-            </p>
-          </li>
-          <li className="">
-            <p className="lead" style={{ fontSize: "22px" }}>
-              best app performence possible
-            </p>
-          </li>
-          <li className="">
-            <p className="lead" style={{ fontSize: "22px" }}>
-              make our customers happy as much as possible
-            </p>
-          </li>
-          <li className="">
-            <p className="lead" style={{ fontSize: "22px" }}>
-              make customers able leave their opinions
-            </p>
-          </li>
+          <p className="lead" style={{ fontSize: "22px" }}>
+            <li className="">provide the best possible user experience</li>
+          </p>
+          <p className="lead" style={{ fontSize: "22px" }}>
+            <li className="">best app performence possible</li>
+          </p>
+          <p className="lead" style={{ fontSize: "22px" }}>
+            <li className="">make our customers happy as much as possible</li>
+          </p>
+          <p className="lead" style={{ fontSize: "22px" }}>
+            <li className="">make customers able leave their opinions</li>
+          </p>
         </ul>{" "}
         <h1 className="display-4" style={{}}>
           Contact us using one of these below
