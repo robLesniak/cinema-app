@@ -33,10 +33,10 @@ namespace BaseAPI
             services.AddDbContext<DataBaseContext>( options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new CorsAuthorizationFilterFactory("MyPolicy"));
-            });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new CorsAuthorizationFilterFactory("MyPolicy"));
+            //});
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
