@@ -40,7 +40,7 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div className="md-12 text-center" style={{ marginBottom: "5px" }}>
+      <div className="col-xs-12 text-center" style={{ marginBottom: "5px" }}>
         <textarea
           className="form-control"
           style={{ height: "100px" }}
