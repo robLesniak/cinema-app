@@ -8,7 +8,6 @@ namespace BaseAPI.Controllers
 {
     [Route("api/movies")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
     public class AllMoviesController : ControllerBase
     {
         private DataBaseContext _context;
@@ -18,7 +17,6 @@ namespace BaseAPI.Controllers
                 _context.Database.EnsureCreated();
         }
 
-        [EnableCors("AllowOrigin")]
         [HttpGet]
         public IQueryable<Movies> GetAllMovies(string search)
         {            
@@ -39,7 +37,6 @@ namespace BaseAPI.Controllers
                 return _context.movie.Select(x => x.Get(result));
         }
 
-        [EnableCors("AllowOrigin")]
         [HttpGet("{id}")]
         public IQueryable<Movies> GetAllMoviesId(int id)
         {
@@ -50,8 +47,7 @@ namespace BaseAPI.Controllers
                 genre = _context.genre.ToList(),
                 trailer = _context.trailer.ToList(),
                 poster = _context.poster.ToList(),
-                role = _context.role.Select(x => x.Get(persons)).ToList(),
-
+                role = _context.role.Select(x => x.Get(persons)).ToList()
             };
 
             return _context.movie.Where(x=>x.movieID == id).Select(x => x.Get(result));

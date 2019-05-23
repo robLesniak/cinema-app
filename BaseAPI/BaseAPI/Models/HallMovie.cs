@@ -12,7 +12,7 @@ namespace BaseAPI.Models
         public int hall_movieID { get; set; }
         public int h_hallID { get; set; }
         public int m_movieID { get; set; }
-        public DateTime hallSeanceDate { get; set; }
+        public string hallSeanceDate { get; set; }
 
         public HallMovieWIthSeats Get(List<Seat> seats)
         {

@@ -11,7 +11,7 @@ namespace BaseAPI.Models
         public int id { get; set; }
         public int hallID { get; set; }
         public int movieID { get; set; }
-        public DateTime seanceDate { get; set; }
+        public string seanceDate { get; set; }
 
         public List<Seat> seatsBooked { get; set; }
 
