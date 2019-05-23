@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createMovie } from "../../../store/actions/movieActions";
 import { connect } from "react-redux";
+import axios from "axios";
 
 class AddMovie extends Component {
   constructor() {
@@ -13,12 +14,39 @@ class AddMovie extends Component {
       image: "",
       plot: "",
       title: "",
-      type: ""
+      type: "",
+      movies: [],
+      genres: [],
+      selectedMovie: ""
     };
+  }
+
+  async componentDidMount() {
+    const res = await axios.get("http://51.15.102.229:5000/api/movies");
+    const movies = await res.data;
+    this.setState({ movies: movies });
+
+    this.setState({
+      genres: [
+        ...new Set(
+          movies
+            .flatMap(movie => {
+              return movie.genres.flatMap(genre => {
+                return genre.genreType;
+              });
+            })
+            .sort()
+        )
+      ]
+    });
   }
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  generateSelectedMovie = () => {
+    return <div />;
   };
 
   onSubmit = e => {
@@ -40,9 +68,38 @@ class AddMovie extends Component {
   render() {
     return (
       <div className="movie">
+        {console.log(this.state.movies)}
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              <select
+                className="custom-select custom-select-lg mb-3"
+                placeholder="select movie to add"
+                name="selectedMovie"
+                onChange={this.onChange}
+              >
+                <option value="" disabled selected hidden>
+                  {" "}
+                  Choose movie to add
+                </option>
+                {this.state.genres.map((genre, key) => {
+                  return (
+                    <optgroup key={key} label={genre}>
+                      {this.state.movies.map(movie =>
+                        movie.genres.map(genre2 => {
+                          return genre2.genreType === genre ? (
+                            <option key={movie.id} value={movie.id}>
+                              {movie.title}
+                            </option>
+                          ) : null;
+                        })
+                      )}
+                    </optgroup>
+                  );
+                })}
+                }
+              </select>
+              {this.state.selectedMovie !== "" ? <div /> : null}
               <h1 className="display-5 text-center">Add Movie</h1>
               <hr />
               <form onSubmit={this.onSubmit}>
