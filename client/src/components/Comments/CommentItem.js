@@ -4,7 +4,7 @@ import Avatar from "react-avatar";
 const CommentItem = ({ comment }) => {
   return (
     <div
-      className="card col-md-12 text-center"
+      className="card col-xs-12 text-center"
       style={{
         marginBottom: "5px",
         width: "650px"
@@ -18,7 +18,6 @@ const CommentItem = ({ comment }) => {
           backgroundColor: "#d1d1fa"
         }}
       >
-        Posted by {comment.authorUsername} at {comment.date}
         {comment.facebookId
           ? (console.log(comment.facebookId),
             (
@@ -26,10 +25,11 @@ const CommentItem = ({ comment }) => {
                 facebookId={comment.facebookId}
                 round={true}
                 size="40"
-                style={{ marginLeft: "5px" }}
+                style={{ marginRight: "8px" }}
               />
             ))
           : null}
+          Posted by {comment.authorUsername} at {comment.date}
       </div>
       <div className="row ">
         <div className="col-md-12 px-3">
