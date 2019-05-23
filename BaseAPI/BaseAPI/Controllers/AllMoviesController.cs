@@ -47,8 +47,7 @@ namespace BaseAPI.Controllers
                 genre = _context.genre.ToList(),
                 trailer = _context.trailer.ToList(),
                 poster = _context.poster.ToList(),
-                role = _context.role.Select(x => x.Get(persons)).ToList(),
-
+                role = _context.role.Select(x => x.Get(persons)).ToList()
             };
 
             return _context.movie.Where(x=>x.movieID == id).Select(x => x.Get(result));

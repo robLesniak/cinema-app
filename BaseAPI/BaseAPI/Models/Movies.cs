@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -9,8 +10,9 @@ namespace BaseAPI.Models
         public int id { get; set; }
         public string title { get; set; }
         public string description { get; set; }
-        public string releaseDate { get; set; }
+        public DateTime releaseDate { get; set; }
         public string rating { get; set; }
+        public int duration { get; set; }
 
         public List<Genre> genres { get; set; }
         public List<Trailer> trailers { get; set; }
