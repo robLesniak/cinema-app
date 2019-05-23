@@ -12,10 +12,13 @@ const UserIsAuthenticatedNav = props => {
   return (
         <ul className="navbar-nav ml-auto" style={{ alignItems: "center" }}>
           <li className="nav-item">
-            <Link to="/" className="nav-link " style={{ fontSize: "20px" }}>
+          <div className="dropdown">
+            {/* <Link to="/" className="nav-link " style={{ fontSize: "20px" }}> */}
               <button
                 type="button"
-                className="btn btn-lg btn-outline"
+                className="btn btn-lg btn-outline dropdown-toggle"
+                id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 {profile.username ? (
@@ -28,7 +31,11 @@ const UserIsAuthenticatedNav = props => {
                   />
                 )}
               </button>
-            </Link>
+            {/* </Link> */}
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <Link className="dropdown-item" to="/user/:id/reservation">Reservation</Link>
+            </div>
+            </div>
           </li>
           <li className="nav-item">
             <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
