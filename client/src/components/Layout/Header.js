@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import UserIsAuthenticatedNav from "../UserManagement/UserIsAuthenticatedNav";
 import UserIsNotAuthenticatedNav from "../UserManagement/UserIsNotAuthenticatedNav";
 
+import "./style.css";
+
 const Header = props => {
   const { auth } = props;
   const links = auth.uid ? (
@@ -43,7 +45,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline"
+                className="buttonHover btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-film" />
@@ -59,7 +61,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline"
+                className="buttonHover btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 <i className="fa fa-money" />
@@ -75,7 +77,7 @@ const Header = props => {
             >
               <button
                 type="button"
-                className="btn btn-lg btn-outline"
+                className="buttonHover btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
                 About us&nbsp;
