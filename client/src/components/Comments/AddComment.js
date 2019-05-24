@@ -8,7 +8,8 @@ class AddComment extends Component {
     this.state = {
       body: "",
       date: "",
-      movieId: this.props.movieId
+      movieId: this.props.movieId,
+      disabledBtn: true
     };
   }
 
@@ -34,7 +35,7 @@ class AddComment extends Component {
       date: datetime.toString(),
       movieId: this.state.movieId
     };
-
+    this.setState({ body: "" });
     this.props.createComment(newComment);
     this.setState({ comment: "", date: "" });
   };
@@ -44,11 +45,14 @@ class AddComment extends Component {
       <div className="col-xs-12 text-center" style={{ marginBottom: "5px" }}>
         <textarea
           className="form-control"
-          style={{ height: "100px" }}
+          value={this.state.body}
+          style={{ height: "100px", textAlign: "center", fontSize: "20px" }}
           name="body"
           rows="3"
           onChange={this.onChange}
+          placeholder="Type your comment here"
         />
+
         <button
           onClick={this.onSubmit}
           className="btn btn-block"
@@ -56,8 +60,10 @@ class AddComment extends Component {
             backgroundColor: "#7070EF",
             fontWeight: "bold",
             color: "white",
-            marginBottom: "5px"
+            marginBottom: "5px",
+            marginTop: "5px"
           }}
+          disabled={!this.state.body}
         >
           Comment{" "}
         </button>
