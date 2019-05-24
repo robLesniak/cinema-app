@@ -1,7 +1,7 @@
 import React from "react";
 import CommentItem from "./CommentItem";
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, filmId }) => {
   return (
     <div>
       <div className="container">
@@ -11,7 +11,9 @@ const CommentList = ({ comments }) => {
         >
           {comments &&
             comments.map(comment => {
-              return <CommentItem comment={comment} key={comment.id} />;
+              return comment.movieId === filmId ? (
+                <CommentItem comment={comment} key={comment.id} />
+              ) : null;
             })}
         </div>
       </div>

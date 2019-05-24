@@ -85,9 +85,9 @@ const MovieDetails = props => {
                     </p>
                     <ReactPlayer
                       url={movie.trailerURL}
-                      pip="true"
+                      pip={true}
                       width="auto"
-                      controls="true"
+                      controls={true}
                       style={{ marginBottom: "20px", marginRight: "30px" }}
                     />
                   </div>
@@ -97,9 +97,11 @@ const MovieDetails = props => {
           </div>
         </div>
         <div className="col-md-auto">
-          <CommentList comments={comments} />
+          <CommentList comments={comments} filmId={id} />
         </div>
-        <div className="col-md-auto">{auth.uid ? <AddComment /> : null}</div>
+        <div className="col-md-auto">
+          {auth.uid ? <AddComment movieId={id} /> : null}
+        </div>
       </div>
     );
   } else {

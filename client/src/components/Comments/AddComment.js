@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { createComment } from "../../store/actions/commentActions";
 
 class AddComment extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       body: "",
       date: "",
-      movieId: ""
+      movieId: this.props.movieId
     };
   }
 
@@ -31,7 +31,8 @@ class AddComment extends Component {
       currentDate.getMinutes();
     const newComment = {
       body: this.state.body,
-      date: datetime.toString()
+      date: datetime.toString(),
+      movieId: this.state.movieId
     };
 
     this.props.createComment(newComment);
