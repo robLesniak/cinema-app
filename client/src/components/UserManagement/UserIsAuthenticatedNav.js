@@ -34,6 +34,7 @@ const UserIsAuthenticatedNav = props => {
             {/* </Link> */}
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <Link className="dropdown-item" to="/user/:id/reservation">Reservation</Link>
+              <Link className="dropdown-item" to="/user/changePassword">Change password</Link>
             </div>
             </div>
           </li>
