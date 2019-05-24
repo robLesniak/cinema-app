@@ -87,7 +87,9 @@ class ChangePassword extends Component {
                 <h5 
                   style={{ 
                     color: "blue", 
-                    fontWeight: "bold" }}
+                    fontWeight: "bold",
+                    marginTop: "10px"
+                  }}
                 >
                   {errorPassword}
                 </h5>
