@@ -5,12 +5,30 @@ class ChangePassword extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentPasswordColor: "",
+      newPaswordColor: "",
       currentPassword: "",
       newPassword: "",
       passwordColor: "",
       errorPassword: null
     };
   }
+
+  handleFocusCurrentPassword = () => {
+    this.setState({ currentPasswordColor: "#d1d1fa" });
+  };
+
+  handleFocusNewPassword = () => {
+    this.setState({ newPaswordColor: "#d1d1fa" });
+  };
+
+  handleOnBlurCurrentPassword = () => {
+    this.setState({ currentPasswordColor: "#FFFFFF" });
+  };
+
+  handleOnBlurNewPassword = () => {
+    this.setState({ newPaswordColor: "#FFFFFF" });
+  };
 
   handleChange = event => {
     this.setState({
@@ -50,7 +68,6 @@ class ChangePassword extends Component {
   };
 
   render() {
-    console.log(firebase.auth().currentUser);
     if (this.state.errorPassword === "Password has been changed") {
       return <Redirect to="/repertoire" />;
     }
@@ -72,21 +89,27 @@ class ChangePassword extends Component {
               <div className="form-group has-success">
                 <input
                   className="form-control input-lg"
+                  style={{ backgroundColor: this.state.currentPasswordColor }}
                   type="password"
                   placeholder="Current Password"
                   name="currentPassword"
-                  value={this.state.currentPassword}
                   onChange={this.handleChange}
+                  value={this.state.currentPassword}
+                  onFocus={this.handleFocusCurrentPassword}
+                  onBlur={this.handleOnBlurCurrentPassword}
                 />
               </div>
               <div className="form-group has-success">
                 <input
                   className="form-control input-lg"
+                  style={{ backgroundColor: this.state.newPaswordColor }}
                   type="password"
                   placeholder="New Password"
                   name="newPassword"
-                  value={this.state.newPassword}
                   onChange={this.handleChange}
+                  value={this.state.newPassword}
+                  onFocus={this.handleFocusNewPassword}
+                  onBlur={this.handleOnBlurNewPassword}
                 />
               </div>
               <button
