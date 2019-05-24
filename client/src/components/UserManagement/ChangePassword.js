@@ -29,7 +29,7 @@ class ChangePassword extends Component {
 
   changePassword = () => {
     this.reauthenticate(this.state.currentPassword).then(() => {
-      var user = firebase.auth().currentUser;
+      let user = firebase.auth().currentUser;
       user.updatePassword(this.state.newPassword).then(() => {
         console.log('password has been changed')
       }).catch((error) => { console.log(error.message); });
