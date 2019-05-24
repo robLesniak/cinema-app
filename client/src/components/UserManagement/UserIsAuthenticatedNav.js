@@ -34,6 +34,7 @@ const UserIsAuthenticatedNav = props => {
             {/* </Link> */}
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <Link className="dropdown-item" to="/user/:id/reservation">Reservation</Link>
+              <Link className="dropdown-item" to="/user/changePassword">Change password</Link>
             </div>
             </div>
           </li>
@@ -41,7 +42,7 @@ const UserIsAuthenticatedNav = props => {
             <Link to="/login" className="nav-link" style={{ fontSize: "20px" }}>
               <button
                 type="button"
-                className="btn btn-lg btn-outline"
+                className="buttonHover btn btn-lg btn-outline"
                 style={{
                   border: "none",
                   fontWeight: "bold"
