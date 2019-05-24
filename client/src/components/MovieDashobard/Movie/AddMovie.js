@@ -29,7 +29,6 @@ class AddMovie extends Component {
     const res = await axios.get("http://51.15.102.229:5000/api/movies");
     const movies = await res.data;
     this.setState({ movies: movies });
-
     this.setState({
       genres: [
         ...new Set(
