@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createMovie } from "../../../store/actions/movieActions";
 import { connect } from "react-redux";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 class AddMovie extends Component {
   constructor() {
@@ -145,6 +146,8 @@ class AddMovie extends Component {
   };
 
   render() {
+    const { auth } = this.props;
+    if (auth.email !== "admin@admin.com") return <Redirect to="/repertoire" />;
     return (
       <div className="movie">
         <div className="container">
@@ -315,6 +318,12 @@ class AddMovie extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     createMovie: (movie, history) => dispatch(createMovie(movie, history))
@@ -322,6 +331,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddMovie);
