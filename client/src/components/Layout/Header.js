@@ -20,22 +20,27 @@ const Header = props => {
         backgroundColor: "#4b4bf4"
       }}
     >
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-      
-        <Link to="" className="navbar-brand">
-          <img
-            src={require("../../images/cinema.svg.png")}
-            className="d-inline-block align-top"
-            style={{ height: "42px" }}
-            alt=""
-          />
-        </Link>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+
+      <Link to="" className="navbar-brand">
+        <img
+          src={require("../../images/cinema.svg.png")}
+          className="d-inline-block align-top"
+          style={{ height: "42px" }}
+          alt=""
+        />
+      </Link>
+      <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item">
             <Link
@@ -85,11 +90,9 @@ const Header = props => {
               </button>
             </Link>
           </li>
-          
         </ul>
         {links}
-        </div>
-        
+      </div>
     </nav>
   );
 };
