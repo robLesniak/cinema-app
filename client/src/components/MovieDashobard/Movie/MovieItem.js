@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import firebase from "../../../config/firebaseConfig";
 
-const MovieItem = ({ movie }) => {
+const MovieItem = ({ movie, auth }) => {
   return (
     <div className="card" style={{ marginBottom: "5px" }}>
       <div
@@ -24,6 +25,27 @@ const MovieItem = ({ movie }) => {
             <p className="card-tex">{movie.plot}</p>
             <p className="card-text">Director: {movie.director}</p>
             <p className="card-text">Duration: {movie.duration} mins </p>
+            {auth.email === "admin@admin.com" ? (
+              <button
+                className="btn btn-lg"
+                style={{
+                  backgroundColor: "red",
+                  color: "white",
+                  marginRight: "5px"
+                }}
+                onClick={
+                  null
+                } /*firebase
+                .firestore()
+                .collection("films")
+                .doc(`${movie.id}`)
+                .delete()
+              .then(() => window.alert("You've just deleted " + movie.title))*/
+              >
+                {" "}
+                Delete movie{" "}
+              </button>
+            ) : null}
             <Link
               to={`/repertoire/${movie.id}/details`}
               className="btn btn-lg"
