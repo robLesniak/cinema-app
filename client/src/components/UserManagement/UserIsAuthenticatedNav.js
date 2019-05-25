@@ -9,7 +9,6 @@ import Avatar from "react-avatar";
 const UserIsAuthenticatedNav = props => {
   // const icon = <i class="fa fa-user-circle" />;
   const { auth, profile } = props;
-  console.log(profile);
   return (
     <ul className="navbar-nav ml-auto" style={{ alignItems: "center" }}>
       {profile.isAdmin ? (
@@ -20,7 +19,8 @@ const UserIsAuthenticatedNav = props => {
               className="buttonHover btn btn-lg btn-outline"
               style={{
                 border: "none",
-                fontWeight: "bold"
+                fontWeight: "bold",
+                color: "red"
               }}
             >
               Add movie{" "}

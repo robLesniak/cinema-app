@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const MovieAvaiability = props => {
   const id = props.match.params.movieId;
   const { film } = props;
-  console.log(film);
   if (film) {
     return (
       <div className="card center" style={{ marginBottom: "5px" }}>
