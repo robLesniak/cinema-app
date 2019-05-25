@@ -12,9 +12,24 @@ const UserIsAuthenticatedNav = props => {
   console.log(profile);
   return (
     <ul className="navbar-nav ml-auto" style={{ alignItems: "center" }}>
+      {profile.isAdmin ? (
+        <li className="nav-iem">
+          <Link to="/add/movie">
+            <button
+              type="button"
+              className="buttonHover btn btn-lg btn-outline"
+              style={{
+                border: "none",
+                fontWeight: "bold"
+              }}
+            >
+              Add movie{" "}
+            </button>
+          </Link>
+        </li>
+      ) : null}
       <li className="nav-item">
         <div className="dropdown">
-          {/* <Link to="/" className="nav-link " style={{ fontSize: "20px" }}> */}
           <button
             type="button"
             className="btn btn-lg btn-outline dropdown-toggle"
@@ -34,7 +49,6 @@ const UserIsAuthenticatedNav = props => {
               />
             )}
           </button>
-          {/* </Link> */}
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/user/:id/reservation">
               Reservation
