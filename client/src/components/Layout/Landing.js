@@ -17,21 +17,21 @@ class Landing extends Component {
     firebase
       .firestore()
       .collection("films")
-      .doc("CkRC39k4mtmzo7IonZsE")
+      .doc("693BOuynSHrH2cAzy0pt")
       .get()
       .then(doc => this.setState({ movie1: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("Diduq8NT4DpXBCjOsu2H")
+      .doc("Q7JAdl9vKcBOIZLjR2QJ")
       .get()
       .then(doc => this.setState({ movie2: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("piUabYOks6Ivm2VRgDg6")
+      .doc("gl2Qu89Jp5kZiAtJNqtf")
       .get()
       .then(doc => this.setState({ movie3: doc.data() }));
   }
