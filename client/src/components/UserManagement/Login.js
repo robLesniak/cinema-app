@@ -131,7 +131,7 @@ class Login extends Component {
                   className="btn btn-lg btn-primary btn-block"
                   value="Log me in"
                   type="submit"
-                  style={{ backgroundColor: "#7070EF" }}
+                  style={{ backgroundColor: "#0051a5" }}
                 />
                 <Link to="/register">
                   <p style={{ fontSize: "12px" }}>

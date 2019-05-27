@@ -42,7 +42,10 @@ class Landing extends Component {
     }
 
     return (
-      <div className="container" style={{ alignItems: "center" }}>
+      <div className="col-md-12 text-center" style={{
+        background: "white"
+      }}>
+      <div className="container" style={{ marginTop:"50px", marginBottom:"20px" }}>
         <div className="landing">
           <div className="light-overlay landing-inner text-dark">
             <div className="row">
@@ -61,7 +64,7 @@ class Landing extends Component {
                   to="/register"
                   className="btn btn-lg btn-outline-light mr-2"
                   style={{
-                    backgroundColor: "#7070EF",
+                    backgroundColor: "#0051a5",
                     border: "none",
                     fontWeight: "bold"
                   }}
@@ -72,7 +75,7 @@ class Landing extends Component {
                   to="/login"
                   className="btn btn-lg btn-outline-light mr-2"
                   style={{
-                    backgroundColor: "#7070EF",
+                    backgroundColor: "#0051a5",
                     border: "none",
                     fontWeight: "bold"
                   }}
@@ -104,7 +107,7 @@ class Landing extends Component {
                     className="rounded"
                     src={this.state.movie1.image}
                     alt=""
-                  />
+                   style={{marginBottom:"50px"}}/>
                 </Link>
               )}
             </div>
@@ -153,6 +156,7 @@ class Landing extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

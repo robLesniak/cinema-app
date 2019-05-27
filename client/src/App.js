@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App" style={{}}>
+          <div className="App" style={{ backgroundColor:"#001f3f"}}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/add/movie" component={AddMovie} />

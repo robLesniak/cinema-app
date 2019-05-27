@@ -57,9 +57,10 @@ class AddComment extends Component {
           onClick={this.onSubmit}
           className="btn btn-block"
           style={{
-            backgroundColor: "#7070EF",
-            fontWeight: "bold",
-            color: "white",
+            backgroundColor: "#0051a5",
+            fontWeight: "bold", 
+            color:"white",
+            fontSize:"20px",       
             marginBottom: "5px",
             marginTop: "5px"
           }}

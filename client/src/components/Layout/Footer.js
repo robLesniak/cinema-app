@@ -1,34 +1,35 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "react-router-dom";
+
 
 class Footer extends Component {
   render() {
     return (
-      <footer class="page-footer font-small unique-color-dark">
+      <footer class="page-footer font-small unique-color-dark" style={{ backgroundColor: "#F8F9FA" }}>
 
-      <div style={{ backgroundColor: "#7070EF" }}>
+      <div style={{ backgroundColor: "#001f3f" }}>
           <div class="container">
   
               <div class="row py-4 d-flex align-items-center">
   
                   <div class="col-md-6 col-lg-5 text-center">
-                      <h6 class="mb-0">Get connected with us on social networks!</h6>
+                      <h6  style={{fontSize: "20px",color: "white"}} class="mb-0">Get connected with us on social networks!</h6>
                   </div>
   
                   <div class="col-md-6 col-lg-6 text-center text-md-right">
   
-                      <a class="fb-ic">
+                      <Link class="fb-ic">
                           <i class="fa fa-facebook-f white-text mr-5" style={{fontSize: "30px",color: "white"}}> </i>
   
-                      </a>
+                      </Link>
   
-                      <a class="tw-ic">
+                      <Link class="tw-ic">
                           <i class="fa fa-twitter white-text mr-5" style={{fontSize: "30px",color: "white"}}> </i>
-                      </a>
+                      </Link>
   
-                      <a class="ins-ic">
+                      <Link class="ins-ic">
                           <i class="fa fa-instagram mr-5" style={{fontSize: "30px",color: "white"}}> </i>
-                      </a>
+                      </Link>
   
                       <i class="fa fa-youtube mr-5" style={{fontSize: "30px",color: "white"}}></i>
                   </div>
@@ -55,16 +56,16 @@ class Footer extends Component {
                   <h6 class="text-uppercase font-weight-bold">Useful links</h6>
                   <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={ { width: "60px" }}/>
                   <p>
-                      <a href="https://github.com/robLesniak/cinema-app">Git Hub</a>
+                      <Link href="https://github.com/robLesniak/cinema-app">Git Hub</Link>
                   </p>
                   <p>
-                      <a href="#!">Become an Affiliate</a>
+                      <Link href="#!">Become an Affiliate</Link>
                   </p>
                   <p>
-                      <a href="#!">Rate Us !!!</a>
+                      <Link href="#!">Rate Us !!!</Link>
                   </p>
                   <p>
-                      <a href="#!">Help</a>
+                      <Link href="#!">Help</Link>
                   </p>
   
               </div>
