@@ -24,7 +24,6 @@ class Login extends Component {
       .signInWithPopup(provider)
       .then(({ user }) => {
         this.setState({ user: user });
-        console.log(this.state.user.displayName);
         firebase
           .firestore()
           .collection("users")
