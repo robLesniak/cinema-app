@@ -5,10 +5,12 @@ class Footer extends Component {
   render() {
     return (
       
-      <footer class="page-footer font-small unique-color-dark">
+      <footer class="page-footer font-small unique-color-dark" style={{
+        backgroundColor: "#EEEEEE"
+      }}>
       
         <div style={{
-        backgroundColor: "#6351ce"
+        backgroundColor: "#4b4bf4"
       }}>
           <div class="container">
      
@@ -25,23 +27,23 @@ class Footer extends Component {
       
              
                 <a class="fb-ic">
-                  <i class="fab fa-facebook-f white-text mr-4"> </i>
+                  <i class="fa fa-facebook-f white-text mr-4"> </i>
                 </a>
              
                 <a class="tw-ic">
-                  <i class="fab fa-twitter white-text mr-4"> </i>
+                  <i class="fa fa-twitter white-text mr-4"> </i>
                 </a>
                 
                 <a class="gplus-ic">
-                  <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                  <i class="fa fa-google-plus-g white-text mr-4"> </i>
                 </a>
                 
                 <a class="li-ic">
-                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                  <i class="fa fa-linkedin-in white-text mr-4"> </i>
                 </a>
               
                 <a class="ins-ic">
-                  <i class="fab fa-instagram white-text"> </i>
+                  <i class="fa fa-instagram white-text"> </i>
                 </a>
       
               </div>
@@ -54,7 +56,7 @@ class Footer extends Component {
         </div>
       
        
-        <div class="container text-center text-md-left mt-5">
+        <div  class="container text-center text-md-left mt-5">
       
     
           <div class="row mt-3">
@@ -63,14 +65,12 @@ class Footer extends Component {
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
       
          
-              <h6 class="text-uppercase font-weight-bold">Company name</h6>
+              <h6 class="text-uppercase font-weight-bold">Cinema Manager</h6>
               <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style=
               {{
                 width: "60px"
               }}/>
-              <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur
-                adipisicing elit.</p>
+              <p>Cinema manager is a rapidly growing application. It contains many advanced features that allow you to manage your cinema. It has the possibility of customer service, booking places etc.</p>
       
             </div>
          
@@ -97,10 +97,7 @@ class Footer extends Component {
                 <a href="#!">Bootstrap Angular</a>
               </p>
       
-            </div>
-           
-      
-          
+            </div>         
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
       
              
@@ -134,13 +131,13 @@ class Footer extends Component {
                 width: "60px"
               }}/>
               <p>
-                <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                <i class="fa fa-home mr-3"></i> Kraków</p>
               <p>
-                <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <i class="fa fa-envelope mr-3"></i> cinema@example.com</p>
               <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
               <p>
-                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
       
             </div>
            
@@ -149,8 +146,8 @@ class Footer extends Component {
         
       
         </div>
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/"> SPA CINEMA MANAGMENT</a>
+        <div class="footer-copyright text-center py-3">@2019 Copyright:
+          <a href="https://cinemapp-service.firebaseapp.com/"> SPA </a>
         </div>
       
       
