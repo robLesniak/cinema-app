@@ -17,21 +17,21 @@ class Landing extends Component {
     firebase
       .firestore()
       .collection("films")
-      .doc("693BOuynSHrH2cAzy0pt")
+      .doc("2hY31QvfD6gbmWTTQq5n")
       .get()
       .then(doc => this.setState({ movie1: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("Q7JAdl9vKcBOIZLjR2QJ")
+      .doc("9vCTm9Rmy0Jb1UMuoRKx")
       .get()
       .then(doc => this.setState({ movie2: doc.data() }));
 
     firebase
       .firestore()
       .collection("films")
-      .doc("gl2Qu89Jp5kZiAtJNqtf")
+      .doc("ilOFy92DdofvQzvpYxSj")
       .get()
       .then(doc => this.setState({ movie3: doc.data() }));
   }
@@ -103,7 +103,7 @@ class Landing extends Component {
                   <div className="spinner-grow text-info" role="status" />
                 ) : (
                   <Link
-                    to="/repertoire/693BOuynSHrH2cAzy0pt/details"
+                    to="/repertoire/2hY31QvfD6gbmWTTQq5n/details"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <h5 style={{ fontStyle: "italic", textAlign: "center" }}>
@@ -128,7 +128,7 @@ class Landing extends Component {
                   <div className="spinner-grow text-info" role="status" />
                 ) : (
                   <Link
-                    to="/repertoire/Q7JAdl9vKcBOIZLjR2QJ/details"
+                    to="/repertoire/9vCTm9Rmy0Jb1UMuoRKx/details"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <h5 style={{ fontStyle: "italic" }}>
@@ -148,7 +148,7 @@ class Landing extends Component {
                   <div className="spinner-grow text-info" role="status" />
                 ) : (
                   <Link
-                    to="/repertoire/gl2Qu89Jp5kZiAtJNqtf/details"
+                    to="/repertoire/ilOFy92DdofvQzvpYxSj/details"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <h5 style={{ fontStyle: "italic" }}>
