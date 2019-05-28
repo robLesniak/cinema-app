@@ -22,7 +22,8 @@ class AddMovie extends Component {
       selectedMovie: "",
       writer: "",
       avaiability: "",
-      movie: null
+      movie: null,
+      movieApiId: null
     };
   }
 
@@ -61,6 +62,7 @@ class AddMovie extends Component {
         movie[0].genres.map(genre => {
           return genre.genreType + " ";
         });
+      this.setState({ movieApiId: movie[0].id });
 
       this.setState({
         type: type.substring(0, type.lastIndexOf(","))
@@ -139,7 +141,8 @@ class AddMovie extends Component {
       type: this.state.type,
       writer: this.state.writer,
       trailerURL: this.state.trailerURL,
-      avaiability: this.state.avaiability
+      avaiability: this.state.avaiability,
+      movieApiId: this.state.movieApiId
     };
 
     this.props.createMovie(newMovie, this.props.history);
