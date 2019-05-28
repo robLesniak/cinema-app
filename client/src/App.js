@@ -15,7 +15,7 @@ import MovieDetails from "./components/MovieDashobard/Movie/MovieDetails";
 import Landing from "./components/Layout/Landing";
 import PriceList from "./components/PriceList/PriceList";
 import AboutUs from "./components/AboutUs/AboutUs";
-import ChangePassword from "./components/MovieDashobard/Movie/SeatReservation";
+import ChangePassword from "./components/UserManagement/ChangePassword";
 import SeatReservation from "./components/MovieDashobard/Movie/SeatReservation";
 
 class App extends Component {
