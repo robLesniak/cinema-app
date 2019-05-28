@@ -30,7 +30,7 @@ const MovieAvaiability = props => {
               <p className="card-text center">
                 <Link
                   className="btn btn-lg btn-outline-dark"
-                  to={`/repertoire/${id}/${film.avaiability}`}
+                  to={`/reserv`}
                   style={{
                     fontSize: "20px",
                     backgroundColor: "#0051a5",
