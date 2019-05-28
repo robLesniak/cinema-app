@@ -134,7 +134,7 @@ class Register extends Component {
                   className="btn btn-lg btn-primary btn-block"
                   value="Sign Me Up"
                   type="submit"
-                  style={{ backgroundColor: "#7070EF" }}
+                  style={{ backgroundColor: "#0051a5" }}
                 />
               </form>
             </div>

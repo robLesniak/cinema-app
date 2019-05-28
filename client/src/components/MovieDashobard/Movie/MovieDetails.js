@@ -15,7 +15,7 @@ const MovieDetails = props => {
 
   if (movie) {
     return (
-      <div className="container" style={{}}>
+      <div className="container">
         <div
           className="row justify-content-md-center"
           style={{ marginBottom: "5px" }}
@@ -26,24 +26,24 @@ const MovieDetails = props => {
           >
             <div className="card" style={{ marginBottom: "5px" }}>
               <div
-                className="card-header"
+                className="header"
                 style={{
-                  backgroundColor: "white",
-                  fontSize: "25px",
-                  fontFamily: "Comic Sans MS"
+                  backgroundColor: "#F8F9FA",
+                  fontSize: "30px",
+                  fontFamily: "Courier New"
                 }}
               >
                 {movie.title} ({movie.Year})
               </div>
               <div className="row ">
                 <div className="col-md-4">
-                  <img className="" src={movie.image} alt="" />
+                  <img className="" src={movie.image} alt=""/>
                   {auth.uid ? (
                     <Link
                       to={`/repertoire/${id}`}
                       className="btn btn-lg btn-outline-light mr-2"
                       style={{
-                        backgroundColor: "#7070EF",
+                        backgroundColor: "#0051a5",
                         fontwe: "bold",
                         marginLeft: "5px",
                         marginBottom: "5px",

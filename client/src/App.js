@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 import Register from "./components/UserManagement/Register";
 import AddMovie from "./components/MovieDashobard/Movie/AddMovie";
 import Dashboard from "./components/MovieDashobard/Dashboard";
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App" style={{}}>
+          <div className="App" style={{ backgroundColor:"#001f3f"}}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/add/movie" component={AddMovie} />
@@ -46,6 +47,7 @@ class App extends Component {
               component={MovieDetails}
             />
             <Route exact path={"/repertoire/:movieId/:idx"} component={null} />
+            <Footer />
           </div>
         </Router>
       </Provider>

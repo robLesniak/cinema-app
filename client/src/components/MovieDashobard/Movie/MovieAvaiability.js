@@ -9,20 +9,20 @@ const MovieAvaiability = props => {
   const { film } = props;
   if (film) {
     return (
-      <div className="card center" style={{ marginBottom: "5px" }}>
+      <div className="card center" style={{ marginBottom: "5px", marginTop:"50px"}}>
         <div
-          className="card-header"
+          className="header"
           style={{
-            backgroundColor: "white",
-            fontSize: "25px",
-            fontFamily: "Comic Sans MS"
+            backgroundColor: "#F8F9FA",
+            fontSize: "30px",
+            fontFamily: "Courier New"
           }}
         >
           {film.title} ({film.Year})
         </div>
         <div className="row ">
           <div className="col-md-4">
-            <img className="" src={film.image} alt="" />
+            <img className="" src={film.image} alt="" style={{marginBottom:"20px"}}/>
           </div>
           <div className="col-md-8 px-3">
             <div className="card-block px-6">
@@ -33,8 +33,9 @@ const MovieAvaiability = props => {
                   to={`/repertoire/${id}/${film.avaiability}`}
                   style={{
                     fontSize: "20px",
-                    backgroundColor: "#7070EF",
+                    backgroundColor: "#0051a5",
                     fontWeight: "bold",
+                    color:"white",
                     border: "none"
                   }}
                 >

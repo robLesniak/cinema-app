@@ -3,8 +3,15 @@ import React, { Component } from "react";
 export default class AboutUs extends Component {
   render() {
     return (
-      <div className="col-md-12 text-center">
-        <h1 className="display-4" style={{}}>
+      <div className="col-md-12 text-center" style={{ marginTop:"50px",
+          background: "white"
+        }}>
+        <img
+          src={require("../../images/cinema.svg.png")}
+          alt=""
+          style={{ color:"white", transform: "scale(0.8, 0.8)" }}
+        />
+        <h1 className="display-4" >
           Who we are ? <i className="fa fa-video" />
         </h1>
         <p className="lead" style={{ fontSize: "22px" }}>
@@ -15,7 +22,6 @@ export default class AboutUs extends Component {
         <h1 className="display-4" style={{}}>
           Our goal is to:
         </h1>
-        <ul className="">
           <p className="lead" style={{ fontSize: "22px" }}>
             <li className="">provide the best possible user experience</li>
           </p>
@@ -28,7 +34,6 @@ export default class AboutUs extends Component {
           <p className="lead" style={{ fontSize: "22px" }}>
             <li className="">make customers able leave their opinions</li>
           </p>
-        </ul>{" "}
         <h1 className="display-4" style={{}}>
           Contact us using one of these below
         </h1>
@@ -37,12 +42,7 @@ export default class AboutUs extends Component {
         </p>
         <p className="lead" style={{ fontSize: "22px", marginBottom: "5px" }}>
           Phone: +48 666666666
-        </p>
-        <img
-          src={require("../../images/cinema.svg.png")}
-          alt=""
-          style={{ transform: "scale(0.8, 0.8)" }}
-        />
+        </p>       
       </div>
     );
   }

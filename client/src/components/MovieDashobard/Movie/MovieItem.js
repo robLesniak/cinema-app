@@ -6,18 +6,18 @@ const MovieItem = ({ movie, auth }) => {
   return (
     <div className="card" style={{ marginBottom: "5px" }}>
       <div
-        className="card-header"
+        className="header"
         style={{
-          backgroundColor: "white",
-          fontSize: "25px",
-          fontFamily: "Comic Sans MS"
+          backgroundColor: "#F8F9FA",
+          fontSize: "30px",
+          fontFamily: "Courier New"
         }}
       >
         {movie.title} ({movie.Year})
       </div>
-      <div className="row ">
+      <div className="row">
         <div className="col-md-4">
-          <img className="" src={movie.image} alt="" />
+          <img className="" src={movie.image} alt="" style={{marginBottom:"20px"}} />
         </div>
         <div className="col-md-8 px-3">
           <div className="card-block px-6">
@@ -49,7 +49,7 @@ const MovieItem = ({ movie, auth }) => {
             <Link
               to={`/repertoire/${movie.id}/details`}
               className="btn btn-lg"
-              style={{ backgroundColor: "#7070EF", color: "white" }}
+              style={{ backgroundColor: "#0051a5", color: "white" }}
             >
               Movie details
             </Link>
@@ -57,7 +57,7 @@ const MovieItem = ({ movie, auth }) => {
               to={`/repertoire/${movie.id}`}
               className="btn btn-lg"
               style={{
-                backgroundColor: "#7070EF",
+                backgroundColor: "#0051a5",
                 color: "white",
                 marginLeft: "5px"
               }}
