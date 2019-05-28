@@ -147,7 +147,7 @@ class AddMovie extends Component {
 
   render() {
     const { auth } = this.props;
-    if (auth.email !== "admin@admin.com") return <Redirect to="/repertoire" />;
+    if (auth.email !== "admin@gmail.com") return <Redirect to="/repertoire" />;
     return (
       <div className="movie">
         <div className="container">
