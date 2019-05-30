@@ -14,10 +14,11 @@ namespace BaseAPI.Models
         public string rating { get; set; }
         public int duration { get; set; }
 
+       
         public List<Genre> genres { get; set; }
         public List<Trailer> trailers { get; set; }
         public List<Poster> posters { get; set; }
         public List<Roles> role { get; set; }
-
-    }
+        public List<HallMovieWIthSeats> seanse { get; set; }
+}
 }

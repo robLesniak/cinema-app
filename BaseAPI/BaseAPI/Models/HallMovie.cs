@@ -19,7 +19,7 @@ namespace BaseAPI.Models
             var seatsHere = seats.Where(x => x.hall_movieID == this.hall_movieID).ToList();
             return new HallMovieWIthSeats
             {
-                seansId = this.hall_movieID,
+                hall_movieID = this.hall_movieID,
                 hallID = this.h_hallID,
                 movieID = this.m_movieID,
                 seanceDate = this.hallSeanceDate,

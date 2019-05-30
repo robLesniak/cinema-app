@@ -13,5 +13,6 @@ namespace BaseAPI.Data
         public List<Trailer> trailer { get; set; }
         public List<Poster> poster { get; set; }
         public List<Roles> role { get; set; }
+        public List<HallMovieWIthSeats> seanse { get; set; }
     }
 }
