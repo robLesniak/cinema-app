@@ -7,9 +7,14 @@ import { Link } from "react-router-dom";
 const MovieAvaiability = props => {
   const id = props.match.params.movieId;
   const { film } = props;
+  const { auth } = props;
   if (film) {
+    console.log(auth);
     return (
-      <div className="card center" style={{ marginBottom: "5px", marginTop:"50px"}}>
+      <div
+        className="card center"
+        style={{ marginBottom: "5px", marginTop: "50px" }}
+      >
         <div
           className="header"
           style={{
@@ -22,7 +27,12 @@ const MovieAvaiability = props => {
         </div>
         <div className="row ">
           <div className="col-md-4">
-            <img className="" src={film.image} alt="" style={{marginBottom:"20px"}}/>
+            <img
+              className=""
+              src={film.image}
+              alt=""
+              style={{ marginBottom: "20px" }}
+            />
           </div>
           <div className="col-md-8 px-3">
             <div className="card-block px-6">
@@ -30,12 +40,12 @@ const MovieAvaiability = props => {
               <p className="card-text center">
                 <Link
                   className="btn btn-lg btn-outline-dark"
-                  to={`/reserv`}
+                  to={`/${id}/reserv/${film.movieApiId}`}
                   style={{
                     fontSize: "20px",
                     backgroundColor: "#0051a5",
                     fontWeight: "bold",
-                    color:"white",
+                    color: "white",
                     border: "none"
                   }}
                 >
@@ -65,7 +75,8 @@ const mapStateToProps = (state, ownProps) => {
   const film = films ? films[id] : null;
   //console.log(state);
   return {
-    film: film
+    film: film,
+    auth: state.firebase.auth
   };
 };
 
