@@ -17,13 +17,14 @@ import PriceList from "./components/PriceList/PriceList";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ChangePassword from "./components/UserManagement/ChangePassword";
 import SeatReservation from "./components/MovieDashobard/Movie/SeatReservation";
+import Reservation from "./components/Reservation/Reservation";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App" style={{ backgroundColor:"#001f3f"}}>
+          <div className="App" style={{ backgroundColor: "#001f3f" }}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/add/movie" component={AddMovie} />
@@ -42,12 +43,12 @@ class App extends Component {
               path={"/repertoire/:movieId"}
               component={MovieAvaiability}
             />
-              <Route
+            <Route
               exact
-              path={"/reserv"}
-              component={SeatReservation}
+              path={"/:movieId/reserv/:seanceId"}
+              component={Reservation}
             />
-            <Route           
+            <Route
               exact
               path={"/repertoire/:movieId/details"}
               component={MovieDetails}

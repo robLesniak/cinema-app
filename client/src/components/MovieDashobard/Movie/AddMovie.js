@@ -21,9 +21,9 @@ class AddMovie extends Component {
       genres: [],
       selectedMovie: "",
       writer: "",
-      avaiability: "",
       movie: null,
-      movieApiId: null
+      movieApiId: null,
+      seance: []
     };
   }
 
@@ -53,6 +53,7 @@ class AddMovie extends Component {
   generateSelectedMovie = id => {
     axios.get(`http://51.15.102.229:5000/api/movies/${id}`).then(res => {
       const movie = res.data;
+      this.setState({ seance: movie[0].seanse });
       this.setState({ movie: movie });
       this.setState({ plot: movie[0].description });
       this.setState({ trailerURL: movie[0].trailers[0].trailerURL });
@@ -117,10 +118,6 @@ class AddMovie extends Component {
 
       this.setState({ writer: writers });
     });
-    axios.get(`http://51.15.102.229:5000/api/seans/${id}`).then(res => {
-      const data = res.data;
-      this.setState({ avaiability: data.seanceDate });
-    });
   };
 
   onSelectChange = e => {
@@ -141,8 +138,8 @@ class AddMovie extends Component {
       type: this.state.type,
       writer: this.state.writer,
       trailerURL: this.state.trailerURL,
-      avaiability: this.state.avaiability,
-      movieApiId: this.state.movieApiId
+      movieApiId: this.state.movieApiId,
+      seance: this.state.seance
     };
 
     this.props.createMovie(newMovie, this.props.history);
