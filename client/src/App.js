@@ -17,6 +17,7 @@ import PriceList from "./components/PriceList/PriceList";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ChangePassword from "./components/UserManagement/ChangePassword";
 import SeatReservation from "./components/MovieDashobard/Movie/SeatReservation";
+import Reservation from "./components/Reservation/Reservation";
 
 class App extends Component {
   render() {
@@ -45,7 +46,7 @@ class App extends Component {
               <Route
               exact
               path={"/reserv"}
-              component={SeatReservation}
+              component={Reservation}
             />
             <Route           
               exact
