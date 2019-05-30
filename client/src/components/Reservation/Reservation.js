@@ -61,21 +61,44 @@ class Reservation extends Component {
  
                         
                         {[...Array(10)].map((x, no) =>
-                            <th > <div className="place" key={no+1}>{no+1}</div></th>
+                            <th > <div className="place" key={Number(`${i}${no}`)}>{no+1}</div></th>
                         )}
                          </tbody>
                     )}
                     
                     </table>
-                    
-                    
+                
                     </div>
     </div>
     <div class="col col-lg-2">
     
     </div>
 
+    <div class="col col-lg-2">
+      
+    </div>
+    <div class="col-md-auto">
+    <div className="col-md-12">
+                   
+                    
+                    <table >
+                    {[...Array(5)].map((x, i) =>
+                            <tbody>
+ 
+                        
+                        {[...Array(14)].map((x, no) =>
+                            <th > <div className="place" key={Number(`${i+5}${no}`)}>{no+1}</div></th>
+                        )}
+                         </tbody>
+                    )}
+                    
+                    </table>
+                    </div>
+    </div>
+    <div class="col col-lg-2">
     
+    </div>
+
   </div>
                
                     </div>
