@@ -21,6 +21,11 @@ namespace BaseAPI.Controllers
         public IQueryable<Movies> GetAllMovies(string search)
         {            
             var persons = _context.person.ToList();
+
+
+            var seats = _context.seat.ToList();
+
+            
             var result = new DataSource()
             {
                 genreMovies = _context.movie_genre.ToList(),
@@ -28,8 +33,9 @@ namespace BaseAPI.Controllers
                 trailer = _context.trailer.ToList(),
                 poster = _context.poster.ToList(),
                 role = _context.role.Select(x=>x.Get(persons)).ToList(),
+                seanse =  _context.hall_movie.Select(x => x.Get(seats)).ToList()
 
-            };
+        };
 
             if (search != null)
                 return _context.movie.Where(x=>x.movieTitle.Contains(search)).Select(x => x.Get(result));
@@ -41,13 +47,16 @@ namespace BaseAPI.Controllers
         public IQueryable<Movies> GetAllMoviesId(int id)
         {
             var persons = _context.person.ToList();
+            var seats = _context.seat.ToList();
+
             var result = new DataSource()
             {
                 genreMovies = _context.movie_genre.ToList(),
                 genre = _context.genre.ToList(),
                 trailer = _context.trailer.ToList(),
                 poster = _context.poster.ToList(),
-                role = _context.role.Select(x => x.Get(persons)).ToList()
+                role = _context.role.Select(x => x.Get(persons)).ToList(),
+                seanse = _context.hall_movie.Select(x => x.Get(seats)).ToList()
             };
 
             return _context.movie.Where(x=>x.movieID == id).Select(x => x.Get(result));

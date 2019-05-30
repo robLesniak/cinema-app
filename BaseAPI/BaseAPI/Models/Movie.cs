@@ -23,6 +23,7 @@ namespace BaseAPI.Models
             var trailers = data.trailer.Where(x => x.t_movieID == this.movieID).ToList();
             var posters = data.poster.Where(x => x.p_movieID == this.movieID).ToList();
             var role = data.role.Where(x => x.movieID == this.movieID).ToList();
+            var seanse = data.seanse.Where(x => x.movieID == this.movieID).ToList();
 
             return new Movies
             {
@@ -35,6 +36,7 @@ namespace BaseAPI.Models
                 trailers = trailers,
                 posters = posters,
                 role = role,
+                seanse = seanse,
                 duration =  this.duration
             };
         }
