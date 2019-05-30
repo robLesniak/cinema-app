@@ -26,7 +26,7 @@ namespace BaseAPI.Controllers
         {
             var seats = _context.seat.ToList();
 
-          var hall_movies =  _context.hall_movie.Where(x=>x.m_movieID == id).Select(x => x.Get(seats)).FirstOrDefault();
+          var hall_movies =  _context.hall_movie.Where(x=>x.hall_movieID == id).Select(x => x.Get(seats)).FirstOrDefault();
 
           return hall_movies.seatsBooked.Select(x => x.seatNumber).ToList();
         }
