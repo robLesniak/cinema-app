@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BaseAPI.Models;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
 
 namespace BaseAPI.Controllers
 {
@@ -73,12 +74,16 @@ namespace BaseAPI.Controllers
 
         // POST: api/Seats
         [HttpPost]
-        public async Task<ActionResult<Seat>> PostSeat(Seat seat)
+        public bool PostSeat(List<Seat> seat)
         {
-            _context.seat.Add(seat);
-            await _context.SaveChangesAsync();
+            foreach (var s in seat)
+            {
+                _context.seat.Add(s);
+                _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSeat", new { id = seat.seatID }, seat);
+            }
+
+            return true;
         }
 
         // DELETE: api/Seats/5

@@ -8,7 +8,7 @@ namespace BaseAPI.Models
 {
     public class HallMovieWIthSeats
     {
-        public int id { get; set; }
+        public int seansId { get; set; }
         public int hallID { get; set; }
         public int movieID { get; set; }
         public string seanceDate { get; set; }
