@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App" style={{ backgroundColor:"#001f3f"}}>
+          <div className="App" style={{ backgroundColor: "#001f3f" }}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/add/movie" component={AddMovie} />
@@ -43,12 +43,12 @@ class App extends Component {
               path={"/repertoire/:movieId"}
               component={MovieAvaiability}
             />
-              <Route
+            <Route
               exact
-              path={"/reserv"}
+              path={"/:movieId/reserv/:seanceId"}
               component={Reservation}
             />
-            <Route           
+            <Route
               exact
               path={"/repertoire/:movieId/details"}
               component={MovieDetails}
