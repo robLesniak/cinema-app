@@ -9,11 +9,11 @@ class Reservation extends Component {
     super();
     this.state = {
       hall_movieId: "",
-      hallID: "",
       movieID: "",
       seanceDate: "",
       seatsBooked: [],
-      userSeats: []
+      userSeats: [],
+      title: ""
     };
   }
 
@@ -21,33 +21,39 @@ class Reservation extends Component {
     axios
       .get(
         `http://51.15.102.229:5000/api/seans/${
-          this.props.match.params.movieApiId
+          this.props.match.params.seanceId
         }`
       )
       .then(res => {
-        console.log(res.data);
         const movie = res.data;
-        const hallid = movie.hallID;
-        const movieid = movie.movieID;
-        console.log(movieid);
-        this.setState({ hallID: hallid });
+        console.log(movie);
+        this.setState({ hall_movieId: movie[0].hall_movieID });
+
+        this.setState({ seanceDate: movie[0].seanceDate });
         //const movieID = res.data;
-        this.setState({ movieID: movie.movieID });
+        this.setState({ movieID: movie[0].movieID });
         //const seanceDate = res.data;
-        this.setState({ seanceDate: movie.seanceDate });
+        this.setState({ seanceDate: movie[0].seanceDate });
         axios
           .get(
             `http://51.15.102.229:5000/api/seatbooked/${
-              this.props.match.params.movieApiId
+              this.props.match.params.seanceId
             }`
           )
           .then(res => {
             const movie = res.data;
-            console.log(movie);
+
             this.setState({ seatsBooked: movie });
           });
         // const seatsBooked = res.data;
       });
+
+    firebase
+      .firestore()
+      .collection("films")
+      .doc(this.props.match.params.movieId)
+      .get()
+      .then(doc => this.setState({ title: doc.data().title }));
   }
 
   onclick = e => {
@@ -79,6 +85,7 @@ class Reservation extends Component {
       seanceDate: this.state.seanceDate,
       userSeats: this.state.userSeats,
       userUid: this.props.auth.uid,
+      hall_movieId: this.state.hall_movieId,
       createdAt: new Date()
     };
 
@@ -86,6 +93,8 @@ class Reservation extends Component {
       .firestore()
       .collection("reservations")
       .add(newReservationFire);
+
+    // this.props.push.history("/repertoire");
   };
 
   render() {
@@ -93,7 +102,7 @@ class Reservation extends Component {
       <div>
         {" "}
         <h1>
-          <font color="silver">Book your ticket! </font>{" "}
+          <font color="silver">Book your ticket for {this.state.title} ! </font>{" "}
         </h1>
         <div class="row justify-content-md-center">
           <div class="col col-lg-2" />
@@ -156,7 +165,7 @@ class Reservation extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     auth: state.firebase.auth
   };

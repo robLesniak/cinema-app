@@ -8,6 +8,7 @@ const MovieAvaiability = props => {
   const id = props.match.params.movieId;
   const { film } = props;
   const { auth } = props;
+  console.log(film);
   if (film) {
     console.log(auth);
     return (
@@ -37,21 +38,23 @@ const MovieAvaiability = props => {
           <div className="col-md-8 px-3">
             <div className="card-block px-6">
               Choose date:
-              <p className="card-text center">
-                <Link
-                  className="btn btn-lg btn-outline-dark"
-                  to={`/${id}/reserv/${film.movieApiId}`}
-                  style={{
-                    fontSize: "20px",
-                    backgroundColor: "#0051a5",
-                    fontWeight: "bold",
-                    color: "white",
-                    border: "none"
-                  }}
-                >
-                  {film.avaiability}
-                </Link>
-              </p>
+              {film.seance.map(seans => (
+                <p className="card-text center">
+                  <Link
+                    className="btn btn-lg btn-outline-dark"
+                    to={`/${id}/reserv/${seans.hall_movieID}`}
+                    style={{
+                      fontSize: "20px",
+                      backgroundColor: "#0051a5",
+                      fontWeight: "bold",
+                      color: "white",
+                      border: "none"
+                    }}
+                  >
+                    {seans.seanceDate}
+                  </Link>
+                </p>
+              ))}
             </div>
           </div>
         </div>
