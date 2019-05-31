@@ -3,6 +3,7 @@ import axios from "axios";
 import "./style.css";
 import { connect } from "react-redux";
 import firebase from "../../config/firebaseConfig";
+import { Redirect } from "react-router-dom";
 
 class Reservation extends Component {
   constructor() {
@@ -13,7 +14,8 @@ class Reservation extends Component {
       seanceDate: "",
       seatsBooked: [],
       userSeats: [],
-      title: ""
+      title: "",
+      redirect: false
     };
   }
 
@@ -94,11 +96,33 @@ class Reservation extends Component {
       .collection("reservations")
       .add(newReservationFire);
 
+    let updateSeats = [];
+
+    this.state.userSeats.map(seat => {
+      updateSeats.push({
+        hall_movieID: this.state.hall_movieId,
+        seatIsTaken: 1,
+        seatNumber: seat
+      });
+    });
+
+    axios
+      .post("http://51.15.102.229:5000/api/seats", updateSeats)
+      .then(() => {
+        console.log("cze");
+        this.setState({ redirect: true });
+      })
+      .catch(err => console.log("siema"));
+
     // this.props.push.history("/repertoire");
   };
 
   render() {
-    return (
+    const { redirect } = this.state;
+
+    return redirect ? (
+      <Redirect to="/repertoire" />
+    ) : (
       <div>
         {" "}
         <h1>
