@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BaseAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace BaseAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/seatbooked")]
     [ApiController]
     public class HallMoviesSeatsController : ControllerBase
@@ -21,6 +23,7 @@ namespace BaseAPI.Controllers
         }
 
         // GET: api/HallMovies/5
+
         [HttpGet("{id}")]
         public List<int> GetHallMovie(int id)
         {

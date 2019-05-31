@@ -58,7 +58,7 @@ const MovieDetails = props => {
                       to="/login"
                       className="btn btn-lg btn-outline-light mr-2"
                       style={{
-                        backgroundColor: "#7070EF",
+                        backgroundColor: "#0051a5",
                         marginLeft: "5px",
                         marginBottom: "5px",
                         border: "none",

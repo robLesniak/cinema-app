@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace BaseAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/movies")]
     [ApiController]
     public class AllMoviesController : ControllerBase
