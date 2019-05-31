@@ -194,7 +194,47 @@ class Reservation extends Component {
               )}
             </div>
           </div>
-          <div className="col col-lg-2" />
+          <div className="col col-lg-2" >
+          <form>
+          <div class="row justify-content-md-right">
+                                 <table>
+                                  <th>
+                                    <tr><div className="info"> Your choice:  </div> </tr>
+                                    <tr><div className="info"> $ps['name']  </div> </tr>
+                                  </th>
+                                </table>
+            </div>
+            </form>
+            <form>
+          <div class="row justify-content-md-right">
+          <table>
+                                  <th>
+                                    <tr><div className="buy"> Order ticket as:  </div> </tr>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="adults" name="variants"/>
+                                    <label class="custom-control-label" for="adults"> <font color="white"> Adults </font></label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="student" name="variants"/>
+                                    <label class="custom-control-label" for="student"> <font color="white"> Student</font></label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="children1" name="variants"/>
+                                    <label class="custom-control-label" for="children1"> <font color="white"> Children under 10 yo</font></label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="children2" name="variants"/>
+                                    <label class="custom-control-label" for="children2"> <font color="white"> Children above 10 yo</font></label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="adults2" name="variants"/>
+                                    <label class="custom-control-label" for="adults2"> <font color="white"> Adults above 60 yo</font></label>
+                                    </div>
+                                  </th>
+            </table>
+            </div>
+            </form>
+          </div>
         </div>
         <div class="row justify-content-md-center">
         <div class="col col-lg-2" />
@@ -226,7 +266,7 @@ class Reservation extends Component {
                                 backgroundColor: this.state.a212
                               }}
                               onClick={this.onclick}
-                            >
+                              >
                               {no + 1}
                             </div>
                           )}
