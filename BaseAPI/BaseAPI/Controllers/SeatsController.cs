@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BaseAPI.Models;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
+using System.Web.Http.Cors;
 
 namespace BaseAPI.Controllers
 {
-    [EnableCors("CorsPolicy")]
-    [Route("api/[controller]")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [Route("api/seats")]
     [ApiController]
     public class SeatsController : ControllerBase
     {
@@ -75,7 +74,7 @@ namespace BaseAPI.Controllers
         }
 
         // POST: api/Seats
-        [EnableCors]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
         public async Task<IActionResult> PostSeat(List<Seat> seat)
         {
