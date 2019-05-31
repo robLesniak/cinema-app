@@ -129,14 +129,40 @@ class Reservation extends Component {
           <font color="silver">Book your ticket for {this.state.title} ! </font>{" "}
         </h1>
         <div class="row justify-content-md-center">
-          <div class="col col-lg-2" />
+          <div class="col col-lg-2">
+            <form>
+            <div class="row justify-content-md-center">
+              <div className="legend">
+              <table>
+                <tbody>
+                <th>
+                  <tr><div className="free"> </div> </tr>
+                  
+                  <tr><div className="booked"> </div></tr>
+                  
+                  <tr> <div className="chosen"> </div></tr>
+                  
+                </th>
+                <th>
+                <tr className="text"> <font color="silver"> Free  </font></tr>
+                <tr> </tr>
+                <tr className="text"> <font color="silver"> Booked </font></tr>
+                
+                <tr className="text"> <font color="silver"> Your seats</font></tr>
+                </th>
+                </tbody>
+              </table>
+              </div>
+              </div>
+            </form>
+          </div>  
           <div class="col-md-auto">
-            <div className="col-md-12">
+            <div className="col-md-12 vertical-align:center">
               {this.state.seatsBooked === null ? null : (
                 <table>
                   {[...Array(5)].map((x, i) => (
                     <tbody>
-                      {[...Array(15)].map((x, no) => (
+                      {[...Array(10)].map((x, no) => (
                         <th>
                           {this.state.seatsBooked.includes(
                             Number(String(i + 1) + String(no + 1))
@@ -152,6 +178,50 @@ class Reservation extends Component {
                             <div
                               className="place"
                               name={"a" + Number(`${i + 1}${no + 1}`)}
+                              style={{
+                                backgroundColor: this.state.a212
+                              }}
+                              onClick={this.onclick}
+                            >
+                              {no + 1}
+                            </div>
+                          )}
+                        </th>
+                      ))}
+                    </tbody>
+                  ))}
+                </table>
+              )}
+            </div>
+          </div>
+          <div className="col col-lg-2" />
+        </div>
+        <div class="row justify-content-md-center">
+        <div class="col col-lg-2" />
+        
+          <div class="col-md-auto">
+            <div className="col-md-12">
+            <div className="col col-lg-2" />
+              {this.state.seatsBooked === null ? null : (
+                <table>
+                  {[...Array(5)].map((x, i) => (
+                    <tbody>
+                      {[...Array(15)].map((x, no) => (
+                        <th>
+                          {this.state.seatsBooked.includes(
+                            Number(String(i + 6) + String(no + 1))
+                          ) ? (
+                            <div
+                              className="place"
+                              style={{ backgroundColor: "red" }}
+                              name={Number(`${i + 6}${no + 1}`)}
+                            >
+                              {no + 1}
+                            </div>
+                          ) : (
+                            <div
+                              className="place"
+                              name={"a" + Number(`${i + 6}${no + 1}`)}
                               style={{
                                 backgroundColor: this.state.a212
                               }}
@@ -184,7 +254,8 @@ class Reservation extends Component {
           </div>
           <div className="col col-lg-2" />
         </div>
-      </div>
+        </div>
+        
     );
   }
 }
