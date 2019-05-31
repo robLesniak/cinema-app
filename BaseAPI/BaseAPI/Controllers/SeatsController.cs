@@ -76,16 +76,16 @@ namespace BaseAPI.Controllers
 
         // POST: api/Seats
         [HttpPost]
-        public bool PostSeat(List<Seat> seat)
+        public async Task<IActionResult> PostSeat(List<Seat> seat)
         {
             foreach (var s in seat)
             {
                 _context.seat.Add(s);
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
             }
 
-            return true;
+            return Ok();
         }
 
         // DELETE: api/Seats/5

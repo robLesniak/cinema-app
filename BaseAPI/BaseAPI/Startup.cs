@@ -52,6 +52,7 @@ namespace BaseAPI
     //.AllowAnyOrigin()
     //.AllowAnyMethod()
     //.AllowAnyHeader());
+    
             app.UseCors("CorsPolicy");
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
