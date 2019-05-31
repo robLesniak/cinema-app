@@ -10,11 +10,14 @@ class UserReservations extends Component {
     const { auth } = this.props;
     const { movies } = this.props;
     const { reservs } = this.props;
+    const { profile } = this.props;
+    console.log(profile);
     return (
       <div className="container">
         <h1 style={{ color: "white" }}>
           {" "}
-          That's your current reservations {auth.displayName}{" "}
+          That's your current reservations{" "}
+          {auth.displayName == null ? profile.username : auth.displayName}
         </h1>
         {reservs == null
           ? null
@@ -22,7 +25,8 @@ class UserReservations extends Component {
               movies == null
                 ? null
                 : movies.map(movie =>
-                    reserv.movieID === movie.movieApiId ? (
+                    reserv.movieID === movie.movieApiId &&
+                    reserv.userUid === auth.uid ? (
                       <div className="card" style={{ marginBottom: "5px" }}>
                         <div
                           className="header"
@@ -104,7 +108,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     auth: state.firebase.auth,
     reservs: state.firestore.ordered.reservations,
-    movies: state.firestore.ordered.films
+    movies: state.firestore.ordered.films,
+    profile: state.firebase.profile
   };
 };
 
