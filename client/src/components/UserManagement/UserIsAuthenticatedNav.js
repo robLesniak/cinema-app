@@ -50,7 +50,7 @@ const UserIsAuthenticatedNav = props => {
             )}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <Link className="dropdown-item" to="/user/:id/reservation">
+            <Link className="dropdown-item" to={`/reservations/${auth.uid}`}>
               Reservation
             </Link>
             {auth.providerData[0].providerId === "facebook.com" ? null : (

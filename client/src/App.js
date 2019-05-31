@@ -18,6 +18,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import ChangePassword from "./components/UserManagement/ChangePassword";
 import SeatReservation from "./components/MovieDashobard/Movie/SeatReservation";
 import Reservation from "./components/Reservation/Reservation";
+import UserReservations from "./components/UserManagement/UserReservations";
 
 class App extends Component {
   render() {
@@ -52,6 +53,11 @@ class App extends Component {
               exact
               path={"/repertoire/:movieId/details"}
               component={MovieDetails}
+            />
+            <Route
+              exact
+              path={"/reservations/:userId"}
+              component={UserReservations}
             />
             <Route exact path={"/repertoire/:movieId/:idx"} component={null} />
             <Footer />
