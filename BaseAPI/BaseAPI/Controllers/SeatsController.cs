@@ -75,6 +75,7 @@ namespace BaseAPI.Controllers
         }
 
         // POST: api/Seats
+        [EnableCors]
         [HttpPost]
         public async Task<IActionResult> PostSeat(List<Seat> seat)
         {
