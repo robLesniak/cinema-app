@@ -16,7 +16,6 @@ import Landing from "./components/Layout/Landing";
 import PriceList from "./components/PriceList/PriceList";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ChangePassword from "./components/UserManagement/ChangePassword";
-import SeatReservation from "./components/MovieDashobard/Movie/SeatReservation";
 import Reservation from "./components/Reservation/Reservation";
 import UserReservations from "./components/UserManagement/UserReservations";
 

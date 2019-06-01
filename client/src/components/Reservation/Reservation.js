@@ -4,6 +4,7 @@ import "./style.css";
 import { connect } from "react-redux";
 import firebase from "../../config/firebaseConfig";
 import { Redirect } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
 
 class Reservation extends Component {
   constructor() {
@@ -15,7 +16,8 @@ class Reservation extends Component {
       seatsBooked: [],
       userSeats: [],
       title: "",
-      redirect: false
+      redirect: false,
+      price: "18"
     };
   }
 
@@ -80,6 +82,10 @@ class Reservation extends Component {
     }
   };
 
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   onSubmit = e => {
     e.preventDefault();
     const newReservationFire = {
@@ -115,6 +121,11 @@ class Reservation extends Component {
       .catch(err => console.log("siema"));
 
     // this.props.push.history("/repertoire");
+  };
+
+  handleToken = (token, addresses) => {
+    console.log("elo");
+    console.log({ token, addresses });
   };
 
   render() {
@@ -228,7 +239,15 @@ class Reservation extends Component {
                   <table>
                     <th>
                       <tr>
-                        <div className="info"> Your choice: </div>{" "}
+                        <div className="info">
+                          {" "}
+                          {this.state.userSeats.length === 0 ||
+                          this.state.price === "free"
+                            ? "Below your seats: "
+                            : "You have to pay " +
+                              this.state.price * this.state.userSeats.length +
+                              "PLN"}
+                        </div>{" "}
                       </tr>
                       <tr>
                         <div
@@ -246,6 +265,20 @@ class Reservation extends Component {
                             </h6>
                           ))}{" "}
                         </div>
+                        {this.state.userSeats.length !== 0 &&
+                        this.state.price !== "free" ? (
+                          <StripeCheckout
+                            stripeKey="pk_test_dpWQ1A2o3bDVW8vbb1QeBZyB"
+                            amount={
+                              this.state.price * this.state.userSeats.length
+                            }
+                            locale="auto"
+                            name="Premium Cinema"
+                            description="The best platform ever !"
+                            panelLabel={`Book seats for ${this.state.price *
+                              this.state.userSeats.length}}`}
+                          />
+                        ) : null}
                       </tr>
                     </th>
                   </table>
@@ -267,12 +300,23 @@ class Reservation extends Component {
                         textAlignLast: "center",
                         marginTop: "2px"
                       }}
+                      defaultValue="18"
+                      name="price"
+                      onChange={this.onChange}
                     >
-                      <option id="adult" style={{ textAlign: "center" }}>
+                      <option
+                        id="adult"
+                        value="18"
+                        style={{ textAlign: "center" }}
+                      >
                         Adult - 18PLN
                       </option>
-                      <option id="student">Student - 15PLN</option>
-                      <option id="adultab60">Adult above 60 - Free</option>
+                      <option id="student" value="15">
+                        Student - 15PLN
+                      </option>
+                      <option id="adultab60" value="free">
+                        Adult above 60 - Free
+                      </option>
                     </select>
                   </th>
                 </table>
