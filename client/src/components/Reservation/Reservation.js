@@ -131,31 +131,61 @@ class Reservation extends Component {
         <div class="row justify-content-md-center">
           <div class="col col-lg-2">
             <form>
-            <div class="row justify-content-md-center">
-              <div className="legend">
-              <table>
-                <tbody>
-                <th>
-                  <tr><div className="free"> </div> </tr>
-                  
-                  <tr><div className="booked"> </div></tr>
-                  
-                  <tr> <div className="chosen"> </div></tr>
-                  
-                </th>
-                <th>
-                <tr className="text"> <font color="silver"> Free  </font></tr>
-                <tr> </tr>
-                <tr className="text"> <font color="silver"> Booked </font></tr>
-                
-                <tr className="text"> <font color="silver"> Your seats</font></tr>
-                </th>
-                </tbody>
-              </table>
-              </div>
+              <div class="row justify-content-md-center">
+                <div className="legend">
+                  <table style={{ fontWeight: "bold" }}>
+                    <tbody>
+                      <th>
+                        <tr>
+                          <div className="free"> </div>{" "}
+                        </tr>
+
+                        <tr>
+                          <div className="booked"> </div>
+                        </tr>
+
+                        <tr>
+                          {" "}
+                          <div className="chosen"> </div>
+                        </tr>
+                      </th>
+                      <th>
+                        <tr className="text">
+                          {" "}
+                          <font color="silver">
+                            {" "}
+                            <p className="lead" style={{ fontWeight: "bold" }}>
+                              Free{" "}
+                            </p>
+                          </font>
+                        </tr>
+                        <tr> </tr>
+                        <tr className="text">
+                          {" "}
+                          <font color="silver">
+                            {" "}
+                            <p className="lead" style={{ fontWeight: "bold" }}>
+                              Booked{" "}
+                            </p>{" "}
+                          </font>
+                        </tr>
+
+                        <tr className="text">
+                          {" "}
+                          <font color="silver">
+                            {" "}
+                            <p className="lead" style={{ fontWeight: "bold" }}>
+                              Your seats{" "}
+                            </p>
+                          </font>
+                        </tr>
+                      </th>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </form>
-          </div>  
+          </div>
           <div class="col-md-auto">
             <div className="col-md-12 vertical-align:center">
               {this.state.seatsBooked === null ? null : (
@@ -178,9 +208,6 @@ class Reservation extends Component {
                             <div
                               className="place"
                               name={"a" + Number(`${i + 1}${no + 1}`)}
-                              style={{
-                                backgroundColor: this.state.a212
-                              }}
                               onClick={this.onclick}
                             >
                               {no + 1}
@@ -194,57 +221,74 @@ class Reservation extends Component {
               )}
             </div>
           </div>
-          <div className="col col-lg-2" >
-          <form>
-          <div class="row justify-content-md-right">
-                                 <table>
-                                  <th>
-                                    <tr><div className="info"> Your choice:  </div> </tr>
-                                    <tr><div className="info"> $ps['name']  </div> </tr>
-                                  </th>
-                                </table>
-            </div>
+          <div className="col col-lg-2">
+            <form>
+              <div className="row justify-content-md-right">
+                <div style={{ marginLeft: "150px" }}>
+                  <table>
+                    <th>
+                      <tr>
+                        <div className="info"> Your choice: </div>{" "}
+                      </tr>
+                      <tr>
+                        <div
+                          data-spy="scroll"
+                          data-target="#list-example"
+                          data-offset="0"
+                          className="scrollspy-example"
+                          style={{ backgroundColor: "silver" }}
+                        >
+                          {" "}
+                          {this.state.userSeats.map(seat => (
+                            <h6>
+                              row: {seat.substring(0, 1)} ; seat:{" "}
+                              {seat.substring(1)}
+                            </h6>
+                          ))}{" "}
+                        </div>
+                      </tr>
+                    </th>
+                  </table>
+                </div>
+              </div>
             </form>
             <form>
-          <div class="row justify-content-md-right">
-          <table>
-                                  <th>
-                                    <tr><div className="buy"> Order ticket as:  </div> </tr>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="adults" name="variants"/>
-                                    <label class="custom-control-label" for="adults"> <font color="white"> Adults </font></label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="student" name="variants"/>
-                                    <label class="custom-control-label" for="student"> <font color="white"> Student</font></label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="children1" name="variants"/>
-                                    <label class="custom-control-label" for="children1"> <font color="white"> Children under 10 yo</font></label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="children2" name="variants"/>
-                                    <label class="custom-control-label" for="children2"> <font color="white"> Children above 10 yo</font></label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="adults2" name="variants"/>
-                                    <label class="custom-control-label" for="adults2"> <font color="white"> Adults above 60 yo</font></label>
-                                    </div>
-                                  </th>
-            </table>
-            </div>
+              <div className="row justify-content-md-right">
+                <table style={{ marginLeft: "150px" }}>
+                  <th>
+                    <tr>
+                      <div className="buy"> Order ticket as: </div>{" "}
+                    </tr>
+                    <select
+                      class="form-control"
+                      style={{
+                        textAlign: "center",
+                        fontWeight: "bold",
+                        textAlignLast: "center",
+                        marginTop: "2px"
+                      }}
+                    >
+                      <option id="adult" style={{ textAlign: "center" }}>
+                        Adult - 18PLN
+                      </option>
+                      <option id="student">Student - 15PLN</option>
+                      <option id="adultab60">Adult above 60 - Free</option>
+                    </select>
+                  </th>
+                </table>
+              </div>
             </form>
           </div>
         </div>
-        <div class="row justify-content-md-center">
-        <div class="col col-lg-2" />
-        
-          <div class="col-md-auto">
+        <div className="row justify-content-md-center">
+          <div className="col col-lg-2" />
+
+          <div className="col-md-auto">
             <div className="col-md-12">
-            <div className="col col-lg-2" />
+              <div className="col col-lg-2" />
               {this.state.seatsBooked === null ? null : (
                 <table>
-                  {[...Array(5)].map((x, i) => (
+                  {[...Array(4)].map((x, i) => (
                     <tbody>
                       {[...Array(15)].map((x, no) => (
                         <th>
@@ -262,11 +306,8 @@ class Reservation extends Component {
                             <div
                               className="place"
                               name={"a" + Number(`${i + 6}${no + 1}`)}
-                              style={{
-                                backgroundColor: this.state.a212
-                              }}
                               onClick={this.onclick}
-                              >
+                            >
                               {no + 1}
                             </div>
                           )}
@@ -285,7 +326,8 @@ class Reservation extends Component {
                 marginLeft: "5px",
                 marginBottom: "5px",
                 marginTop: "5px",
-                border: "none"
+                border: "none",
+                fontWeight: "bold"
               }}
               onClick={this.onSubmit}
             >
@@ -294,8 +336,7 @@ class Reservation extends Component {
           </div>
           <div className="col col-lg-2" />
         </div>
-        </div>
-        
+      </div>
     );
   }
 }
