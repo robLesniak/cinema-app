@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import firebase from "../../config/firebaseConfig";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
@@ -92,6 +91,7 @@ class UserReservations extends Component {
                                   </li>
                                 ))}
                               </ul>
+                              <p className="lead" />
                             </div>
                           </div>
                         </div>
