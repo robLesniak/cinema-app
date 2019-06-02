@@ -21,7 +21,7 @@ class Footer extends Component {
               </div>
 
               <div className="col-md-6 col-lg-6 text-center text-md-right">
-                <a className="fb-ic" href="https://www.facebook.com/">
+                <a className="fb-ic" href="https://www.facebook.com/" target="_blank">
                   <i
                     className="fa fa-facebook-f white-text mr-5"
                     style={{ fontSize: "30px", color: "white" }}
@@ -30,7 +30,7 @@ class Footer extends Component {
                   </i>
                 </a>
 
-                <a className="tw-ic" href="https://twitter.com">
+                <a className="tw-ic" href="https://twitter.com" target="_blank">
                   <i
                     className="fa fa-twitter white-text mr-5"
                     style={{ fontSize: "30px", color: "white" }}
@@ -39,7 +39,7 @@ class Footer extends Component {
                   </i>
                 </a>
 
-                <a className="ins-ic" href="https://www.instagram.com/">
+                <a className="ins-ic" href="https://www.instagram.com/" target="_blank">
                   <i
                     className="fa fa-instagram mr-5"
                     style={{ fontSize: "30px", color: "white" }}
@@ -48,7 +48,7 @@ class Footer extends Component {
                   </i>
                 </a>
 
-                <a className="ins-ic" href="https://www.youtube.com">
+                <a className="ins-ic" href="https://www.youtube.com" target="_blank">
                 <i
                   className="fa fa-youtube mr-5"
                   style={{ fontSize: "30px", color: "white" }}
@@ -83,18 +83,18 @@ class Footer extends Component {
                 style={{ width: "60px" }}
               />
               <p>
-                <a href="https://github.com/robLesniak/cinema-app">
+                <a href="https://github.com/robLesniak/cinema-app" target="_blank">
                   Git Hub
                 </a>
               </p>
               <p>
-                <a href="https://cinemapp-service.firebaseapp.com/repertoire">Registration</a>
+                <a href="https://cinemapp-service.firebaseapp.com/repertoire" target="_blank">Registration</a>
               </p>
               <p>
-                <a href="https://cinemapp-service.firebaseapp.com/priceList">Price list</a>
+                <a href="https://cinemapp-service.firebaseapp.com/priceList" target="_blank">Price list</a>
               </p>
               <p>
-                <a href="https://cinemapp-service.firebaseapp.com/aboutUs">About us</a>
+                <a href="https://cinemapp-service.firebaseapp.com/aboutUs" target="_blank">About us</a>
               </p>
             </div>
 
