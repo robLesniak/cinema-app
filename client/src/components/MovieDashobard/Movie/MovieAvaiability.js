@@ -27,7 +27,7 @@ const MovieAvaiability = props => {
           {film.title} ({film.Year})
         </div>
         <div className="row ">
-          <div className="col-md-4">
+          <div className="col-md-6">
             <img
               className=""
               src={film.image}
@@ -35,9 +35,9 @@ const MovieAvaiability = props => {
               style={{ marginBottom: "20px" }}
             />
           </div>
-          <div className="col-md-8 px-3">
+          <div className="col-md-14 px-3">
             <div className="card-block px-6">
-              Choose date:
+              <h4 style={{ fontWeight: "bold" }}>Choose date:</h4>
               {film.seance.map(seans => (
                 <p className="card-text center">
                   <Link
