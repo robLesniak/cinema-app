@@ -1,9 +1,11 @@
 ﻿using BaseAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace BaseAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/movie_genre")]
     [ApiController]
     public class GenreMovieController : ControllerBase

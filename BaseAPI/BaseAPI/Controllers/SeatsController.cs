@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BaseAPI.Models;
+using System.Web.Http.Cors;
 
 namespace BaseAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [Route("api/seats")]
     [ApiController]
     public class SeatsController : ControllerBase
     {
@@ -72,13 +74,18 @@ namespace BaseAPI.Controllers
         }
 
         // POST: api/Seats
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
-        public async Task<ActionResult<Seat>> PostSeat(Seat seat)
+        public async Task<IActionResult> PostSeat(List<Seat> seat)
         {
-            _context.seat.Add(seat);
-            await _context.SaveChangesAsync();
+            foreach (var s in seat)
+            {
+                _context.seat.Add(s);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSeat", new { id = seat.seatID }, seat);
+            }
+
+            return Ok();
         }
 
         // DELETE: api/Seats/5

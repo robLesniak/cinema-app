@@ -28,8 +28,16 @@ namespace BaseAPI
             //           .AllowAnyMethod()
             //           .AllowAnyHeader();
             //}));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
 
-                services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<DataBaseContext>( options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -41,11 +49,12 @@ namespace BaseAPI
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCors(builder => builder
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
-
+    //        app.UseCors(builder => builder
+    //.AllowAnyOrigin()
+    //.AllowAnyMethod()
+    //.AllowAnyHeader());
+    
+            app.UseCors("CorsPolicy");
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else      

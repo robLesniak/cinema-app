@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 export default class PriceList extends Component {
   render() {
     return (
-      <div className="col-md-12 text-center ">
+      <div className="col-md-12 text-center white-text " style={{
+        color: "#F8F9FA"
+      }}>
         <p
           className="lead"
-          style={{ fontSize: "22px", textDecoration: "italic" }}
+          style={{ fontSize: "40px", textDecoration: "italic" }}
         >
           Our current prices based on different customers
         </p>
-        <table className="table table-hover" style={{ marginTop: "5px" }}>
+        <table class="table table-striped" style={{ backgroundColor:"#F8F9FA", marginTop: "5px" }}>
           <tbody>
             <tr style={{ fontWeight: "bold", fontSize: "20px" }}>
               <td>Children under 10 yo</td>

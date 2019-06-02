@@ -2,7 +2,7 @@ export const createComment = comment => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
-    console.log(getState().firebase);
+    //console.log(getState().firebase);
     const uid = getState().firebase.auth.uid;
     const photoUrl = getState().firebase.auth.providerData[0].photoURL;
     const facebookId = getState().firebase.auth.providerData[0].uid;

@@ -6,8 +6,7 @@ import { provider, auth } from "../../config/firebaseConfig";
 import { Redirect, Link } from "react-router-dom";
 import firebase from "../../config/firebaseConfig";
 
-import "./style.css"
-
+import "./style.css";
 
 class Login extends Component {
   state = {
@@ -16,35 +15,36 @@ class Login extends Component {
     passwordColor: "",
     emailColor: "",
     user: null,
-    username: ""
+    username: "",
+    isAdmin: ""
   };
 
   login = () => {
-    auth().signInWithPopup(provider)
+    auth()
+      .signInWithPopup(provider)
       .then(({ user }) => {
-        console.log("eloelo")
-        this.setState({ user: user })
-        console.log( this.state.user.displayName)
+        this.setState({ user: user });
         firebase
-      .firestore()
-      .collection("users").add(({
-        username: this.state.user.displayName
-      }))
-      })
-  }
+          .firestore()
+          .collection("users")
+          .add({
+            username: this.state.user.displayName,
+            isAdmin: false
+          });
+      });
+  };
 
   logout = () => {
-    auth().signOut().then(() => {
-      this.setState({user: null}) 
-    })
-  }
+    auth()
+      .signOut()
+      .then(() => {
+        this.setState({ user: null });
+      });
+  };
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.signIn(this.state);
-    //  if (this.props.authError) {
-    //    this.props.history.push("/repertoire");
-    //}
   };
 
   handleChange = event => {
@@ -68,7 +68,6 @@ class Login extends Component {
   handleBlurEmail = () => {
     this.setState({ emailColor: "#FFFFFF" });
   };
-
 
   render() {
     const { email, password } = this.state;
@@ -132,7 +131,7 @@ class Login extends Component {
                   className="btn btn-lg btn-primary btn-block"
                   value="Log me in"
                   type="submit"
-                  style={{ backgroundColor: "#7070EF" }}
+                  style={{ backgroundColor: "#0051a5" }}
                 />
                 <Link to="/register">
                   <p style={{ fontSize: "12px" }}>

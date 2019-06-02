@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BaseAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace BaseAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/seans")]
     [ApiController]
     public class HallMoviesController : ControllerBase
@@ -31,11 +33,11 @@ namespace BaseAPI.Controllers
 
         // GET: api/HallMovies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<HallMovieWIthSeats>> GetHallMovie(int id)
+        public async Task<ActionResult<IEnumerable<HallMovieWIthSeats>>> GetHallMovie(int id)
         {
             var seats = _context.seat.ToList();
 
-            return await _context.hall_movie.Where(x=>x.m_movieID == id).Select(x => x.Get(seats)).FirstOrDefaultAsync();
+            return await _context.hall_movie.Where(x=>x.hall_movieID == id).Select(x => x.Get(seats)).ToListAsync();
         }
 
         // PUT: api/HallMovies/5

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createMovie } from "../../../store/actions/movieActions";
 import { connect } from "react-redux";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 class AddMovie extends Component {
   constructor() {
@@ -20,8 +21,9 @@ class AddMovie extends Component {
       genres: [],
       selectedMovie: "",
       writer: "",
-      avaiability: "",
-      movie: null
+      movie: null,
+      movieApiId: null,
+      seance: []
     };
   }
 
@@ -51,6 +53,7 @@ class AddMovie extends Component {
   generateSelectedMovie = id => {
     axios.get(`http://51.15.102.229:5000/api/movies/${id}`).then(res => {
       const movie = res.data;
+      this.setState({ seance: movie[0].seanse });
       this.setState({ movie: movie });
       this.setState({ plot: movie[0].description });
       this.setState({ trailerURL: movie[0].trailers[0].trailerURL });
@@ -60,6 +63,7 @@ class AddMovie extends Component {
         movie[0].genres.map(genre => {
           return genre.genreType + " ";
         });
+      this.setState({ movieApiId: movie[0].id });
 
       this.setState({
         type: type.substring(0, type.lastIndexOf(","))
@@ -114,10 +118,6 @@ class AddMovie extends Component {
 
       this.setState({ writer: writers });
     });
-    axios.get(`http://51.15.102.229:5000/api/seans/${id}`).then(res => {
-      const data = res.data;
-      this.setState({ avaiability: data.seanceDate });
-    });
   };
 
   onSelectChange = e => {
@@ -138,13 +138,16 @@ class AddMovie extends Component {
       type: this.state.type,
       writer: this.state.writer,
       trailerURL: this.state.trailerURL,
-      avaiability: this.state.avaiability
+      movieApiId: this.state.movieApiId,
+      seance: this.state.seance
     };
 
     this.props.createMovie(newMovie, this.props.history);
   };
 
   render() {
+    const { auth } = this.props;
+    if (auth.email !== "admin@gmail.com") return <Redirect to="/repertoire" />;
     return (
       <div className="movie">
         <div className="container">
@@ -304,7 +307,7 @@ class AddMovie extends Component {
                   type="submit"
                   className="btn btn-block mt-4"
                   placeholder="Add movie"
-                  style={{ backgroundColor: "#7070EF", marginBottom: "5px" }}
+                  style={{ backgroundColor: "#0051a5", marginBottom: "5px" }}
                 />
               </form>
             </div>
@@ -315,6 +318,12 @@ class AddMovie extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     createMovie: (movie, history) => dispatch(createMovie(movie, history))
@@ -322,6 +331,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddMovie);
