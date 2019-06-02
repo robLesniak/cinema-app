@@ -116,7 +116,7 @@ class ChangePassword extends Component {
                 className="btn btn-lg btn-outline-light"
                 onClick={this.changePassword}
                 style={{
-                  backgroundColor: "#7070EF",
+                  backgroundColor: "#0051a5",
                   marginLeft: "5px",
                   marginBottom: "5px",
                   border: "none",

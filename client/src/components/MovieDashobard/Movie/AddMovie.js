@@ -307,7 +307,7 @@ class AddMovie extends Component {
                   type="submit"
                   className="btn btn-block mt-4"
                   placeholder="Add movie"
-                  style={{ backgroundColor: "#7070EF", marginBottom: "5px" }}
+                  style={{ backgroundColor: "#0051a5", marginBottom: "5px" }}
                 />
               </form>
             </div>
