@@ -7,7 +7,7 @@ Our website have also feature to leave a comment from a Facebook user with displ
 In traditional user authentication system you can change your password and also feature for leaving a comment.
 
 **Live version**
-* [Firebase live version](https://cinemapp-service.firebaseapp.com/repertoire)
+* [Firebase live version](https://cinemapp-service.firebaseapp.com)
 
 **Repo**
 * [Our repo](https://github.com/robLesniak/cinema-app)
