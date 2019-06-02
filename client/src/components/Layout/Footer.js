@@ -21,37 +21,39 @@ class Footer extends Component {
               </div>
 
               <div className="col-md-6 col-lg-6 text-center text-md-right">
-                <Link className="fb-ic">
+                <a className="fb-ic" href="https://www.facebook.com/">
                   <i
                     className="fa fa-facebook-f white-text mr-5"
                     style={{ fontSize: "30px", color: "white" }}
                   >
                     {" "}
                   </i>
-                </Link>
+                </a>
 
-                <Link className="tw-ic">
+                <a className="tw-ic" href="https://twitter.com">
                   <i
                     className="fa fa-twitter white-text mr-5"
                     style={{ fontSize: "30px", color: "white" }}
                   >
                     {" "}
                   </i>
-                </Link>
+                </a>
 
-                <Link className="ins-ic">
+                <a className="ins-ic" href="https://www.instagram.com/">
                   <i
                     className="fa fa-instagram mr-5"
                     style={{ fontSize: "30px", color: "white" }}
                   >
                     {" "}
                   </i>
-                </Link>
+                </a>
 
+                <a className="ins-ic" href="https://www.youtube.com">
                 <i
                   className="fa fa-youtube mr-5"
                   style={{ fontSize: "30px", color: "white" }}
                 />
+                 </a>
               </div>
             </div>
           </div>
@@ -81,18 +83,18 @@ class Footer extends Component {
                 style={{ width: "60px" }}
               />
               <p>
-                <Link href="https://github.com/robLesniak/cinema-app">
+                <a href="https://github.com/robLesniak/cinema-app">
                   Git Hub
-                </Link>
+                </a>
               </p>
               <p>
-                <Link href="#!">Become an Affiliate</Link>
+                <a href="https://cinemapp-service.firebaseapp.com/repertoire">Registration</a>
               </p>
               <p>
-                <Link href="#!">Rate Us !!!</Link>
+                <a href="https://cinemapp-service.firebaseapp.com/priceList">Price list</a>
               </p>
               <p>
-                <Link href="#!">Help</Link>
+                <a href="https://cinemapp-service.firebaseapp.com/aboutUs">About us</a>
               </p>
             </div>
 
