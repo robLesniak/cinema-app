@@ -85,8 +85,8 @@ const Header = props => {
                 className="buttonHover btn btn-lg btn-outline"
                 style={{ border: "none", fontWeight: "bold" }}
               >
-                About us&nbsp;
                 <i className="fa fa-question-circle-o" />
+                &nbsp;About us
               </button>
             </Link>
           </li>

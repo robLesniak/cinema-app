@@ -7,6 +7,8 @@ import AddComment from "../../Comments/AddComment";
 import CommentList from "../../Comments/CommentList";
 import ReactPlayer from "react-player";
 
+import "primeicons/primeicons.css";
+
 const MovieDetails = props => {
   const id = props.match.params.movieId;
   const { movie } = props;
@@ -37,7 +39,7 @@ const MovieDetails = props => {
               </div>
               <div className="row ">
                 <div className="col-md-4">
-                  <img className="" src={movie.image} alt=""/>
+                  <img className="" src={movie.image} alt="" />
                   {auth.uid ? (
                     <Link
                       to={`/repertoire/${id}`}
@@ -66,7 +68,11 @@ const MovieDetails = props => {
                         fontWeight: "bold"
                       }}
                     >
-                      Log in to get full experience
+                      Log in to get full experience{" "}
+                      <i
+                        className="pi pi-sign-in"
+                        style={{ fontSize: "1em" }}
+                      />
                     </Link>
                   )}
                 </div>
