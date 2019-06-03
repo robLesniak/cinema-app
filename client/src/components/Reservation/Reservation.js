@@ -22,6 +22,7 @@ class Reservation extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     axios
       .get(
         `http://51.15.102.229:5000/api/seans/${

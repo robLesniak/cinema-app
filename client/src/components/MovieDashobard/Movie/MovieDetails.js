@@ -17,7 +17,7 @@ const MovieDetails = props => {
   const { movie } = props;
   const { comments } = props;
   const { auth } = props;
-
+  window.scrollTo(0, 0);
   if (movie) {
     return (
       <div className="container">

@@ -32,6 +32,10 @@ class Register extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleSubmit = event => {
     event.preventDefault();
     this.props.signUp(this.state);

@@ -26,6 +26,7 @@ const MovieAvaiability = props => {
 
     return 110 - seats.length;
   };
+  window.scrollTo(0, 0);
   if (film) {
     console.log(auth);
     return (

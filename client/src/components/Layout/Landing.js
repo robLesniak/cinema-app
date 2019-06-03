@@ -14,6 +14,7 @@ class Landing extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     firebase
       .firestore()
       .collection("films")

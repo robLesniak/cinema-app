@@ -74,6 +74,10 @@ class Login extends Component {
     this.setState({ emailColor: "#FFFFFF" });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { email, password } = this.state;
     const { authError, auth } = this.props;
