@@ -23,7 +23,7 @@ const MovieAvaiability = props => {
         console.log(100 - seats2.length);
         return 110 - seats2.length;
       });
-    console.log(seats);
+
     return 110 - seats.length;
   };
   if (film) {
@@ -74,7 +74,7 @@ const MovieAvaiability = props => {
                   <i
                     className="pi pi-info-circle"
                     style={{ fontSize: "2em", color: "#0051a5" }}
-                    data-tip={getNumberOfSeats(seans.hall_movieID)}
+                    data-tip="There is a hall with 110 seats"
                   />
                 </p>
               ))}

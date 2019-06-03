@@ -115,10 +115,9 @@ class Reservation extends Component {
     axios
       .post("http://51.15.102.229:5000/api/seats", updateSeats)
       .then(() => {
-        console.log("cze");
         this.setState({ redirect: true });
       })
-      .catch(err => console.log("siema"));
+      .catch(err => console.log(err));
 
     // this.props.push.history("/repertoire");
   };

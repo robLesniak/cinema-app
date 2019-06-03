@@ -23,7 +23,8 @@ class AddMovie extends Component {
       writer: "",
       movie: null,
       movieApiId: null,
-      seance: []
+      seance: [],
+      rating: 4
     };
   }
 
@@ -139,7 +140,8 @@ class AddMovie extends Component {
       writer: this.state.writer,
       trailerURL: this.state.trailerURL,
       movieApiId: this.state.movieApiId,
-      seance: this.state.seance
+      seance: this.state.seance,
+      rating: this.state.rating
     };
 
     this.props.createMovie(newMovie, this.props.history);
