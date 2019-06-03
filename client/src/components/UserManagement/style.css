@@ -10,7 +10,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  height: 22px;
+  height: 24px;
 
   padding-right: 7px;
   padding-left: 29px;
@@ -21,7 +21,6 @@
   text-decoration: none;
   font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   line-height: 22px;
-  
-  cursor: pointer;
 
+  cursor: pointer;
 }

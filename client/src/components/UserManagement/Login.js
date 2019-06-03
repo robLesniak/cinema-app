@@ -6,7 +6,12 @@ import { provider, auth } from "../../config/firebaseConfig";
 import { Redirect, Link } from "react-router-dom";
 import firebase from "../../config/firebaseConfig";
 
+import { InputText } from "primereact/inputtext";
+import { Message } from "primereact/message";
+
 import "./style.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 class Login extends Component {
   state = {
@@ -93,46 +98,73 @@ class Login extends Component {
                 />
               </div>
               {authError ? (
-                <h5 style={{ color: "red", fontWeight: "bold" }}>
-                  {authError}
-                </h5>
+                <Message
+                  style={{ color: "red", border: "none", fontSize: "18px" }}
+                  severity="error"
+                  text={authError}
+                />
               ) : (
                 <h3 className="text-center mb-4">Login</h3>
               )}
               <form className="form-group" onSubmit={this.handleSubmit}>
                 <div className="form-group has-success">
-                  <input
-                    className="form-control input-lg"
-                    placeholder="email address"
-                    name="email"
-                    value={email}
-                    type="email"
-                    onChange={this.handleChange}
-                    style={{ backgroundColor: this.state.emailColor }}
-                    onFocus={this.handleFocusEmail}
-                    onBlur={this.handleBlurEmail}
-                  />
+                  <span className="p-float-label" style={{ fontSize: "20px" }}>
+                    <InputText
+                      id="mail"
+                      value={email}
+                      onChange={this.handleChange}
+                      style={{
+                        backgroundColor: this.state.emailColor
+                      }}
+                      onFocus={this.handleFocusEmail}
+                      onBlur={this.handleBlurEmail}
+                      name="email"
+                      className="form-control input-lg"
+                      type="email"
+                    />
+
+                    <label
+                      htmlFor="mail"
+                      style={{ marginLeft: "10px", fontWeight: "bold" }}
+                    >
+                      E-mail address
+                    </label>
+                  </span>
                 </div>
                 <div className="form-group has-success">
-                  <input
-                    className="form-control input-lg"
-                    placeholder="Password"
-                    name="password"
-                    value={password}
-                    type="password"
-                    onChange={this.handleChange}
-                    style={{ backgroundColor: this.state.passwordColor }}
-                    onFocus={this.handleFocusPassword}
-                    onBlur={this.handleBlurPassword}
-                  />
+                  <span className="p-float-label" style={{ fontSize: "20px" }}>
+                    <InputText
+                      id="pass"
+                      value={password}
+                      onChange={this.handleChange}
+                      style={{
+                        backgroundColor: this.state.passwordColor,
+                        marginTop: "8x`px"
+                      }}
+                      onFocus={this.handleFocusPassword}
+                      onBlur={this.handleBlurPassword}
+                      name="password"
+                      className="form-control input-lg"
+                      type="password"
+                    />
+
+                    <label
+                      htmlFor="pass"
+                      style={{ marginLeft: "10px", fontWeight: "bold" }}
+                    >
+                      Password
+                    </label>
+                  </span>
                 </div>
 
-                <input
+                <button
                   className="btn btn-lg btn-primary btn-block"
-                  value="Log me in"
                   type="submit"
                   style={{ backgroundColor: "#0051a5" }}
-                />
+                >
+                  Log me in{" "}
+                  <i className="pi pi-sign-in" style={{ fontSize: "1em" }} />
+                </button>
                 <Link to="/register">
                   <p style={{ fontSize: "12px" }}>
                     You don't have account yet ? Click here to sign up
