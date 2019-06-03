@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createComment } from "../../store/actions/commentActions";
 
+import "primeicons/primeicons.css";
+
 class AddComment extends Component {
   constructor(props) {
     super(props);
@@ -58,15 +60,15 @@ class AddComment extends Component {
           className="btn btn-block"
           style={{
             backgroundColor: "#0051a5",
-            fontWeight: "bold", 
-            color:"white",
-            fontSize:"20px",       
+            fontWeight: "bold",
+            color: "white",
+            fontSize: "20px",
             marginBottom: "5px",
             marginTop: "5px"
           }}
           disabled={!this.state.body}
         >
-          Comment{" "}
+          Comment <i className="pi pi-comment" style={{ fontSize: "1em" }} />
         </button>
       </div>
     );
