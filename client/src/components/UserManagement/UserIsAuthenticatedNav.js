@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
 
 import { Link } from "react-router-dom";
-
 import Avatar from "react-avatar";
+
+import "primeicons/primeicons.css";
 
 const UserIsAuthenticatedNav = props => {
   // const icon = <i class="fa fa-user-circle" />;
@@ -75,7 +76,7 @@ const UserIsAuthenticatedNav = props => {
             }}
             onClick={props.signOut}
           >
-            Logout
+            Logout <i className="pi pi-sign-out" style={{ fontSize: "1em" }} />
           </button>
         </Link>
       </li>

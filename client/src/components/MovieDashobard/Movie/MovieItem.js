@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import firebase from "../../../config/firebaseConfig";
 
 const MovieItem = ({ movie, auth }) => {
   return (
@@ -17,7 +16,12 @@ const MovieItem = ({ movie, auth }) => {
       </div>
       <div className="row">
         <div className="col-md-4">
-          <img className="" src={movie.image} alt="" style={{marginBottom:"20px"}} />
+          <img
+            className=""
+            src={movie.image}
+            alt=""
+            style={{ marginBottom: "20px" }}
+          />
         </div>
         <div className="col-md-8 px-3">
           <div className="card-block px-6">
@@ -25,7 +29,7 @@ const MovieItem = ({ movie, auth }) => {
             <p className="card-tex">{movie.plot}</p>
             <p className="card-text">Director: {movie.director}</p>
             <p className="card-text">Duration: {movie.duration} mins </p>
-            {auth.email === "admin@admin.com" ? (
+            {auth.email === "admin@gmail.com" ? (
               <button
                 className="btn btn-lg"
                 style={{
