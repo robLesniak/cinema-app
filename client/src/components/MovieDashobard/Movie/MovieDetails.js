@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import AddComment from "../../Comments/AddComment";
 import CommentList from "../../Comments/CommentList";
 import ReactPlayer from "react-player";
+import { Rating } from "primereact/rating";
+
+import "primereact/resources/primereact.min.css";
 
 import "primeicons/primeicons.css";
 
@@ -39,6 +42,18 @@ const MovieDetails = props => {
               </div>
               <div className="row ">
                 <div className="col-md-4">
+                  <h5>Rating based on our users: </h5>
+                  <Rating
+                    value={movie.rating}
+                    stars={7}
+                    style={{
+                      color: "gold",
+                      fontSize: "27px",
+                      fontWeight: "bold"
+                    }}
+                    cancel={false}
+                  />
+
                   <img className="" src={movie.image} alt="" />
                   {auth.uid ? (
                     <Link
